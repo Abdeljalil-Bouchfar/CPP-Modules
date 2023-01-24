@@ -1,7 +1,7 @@
 NAME = phoneBook
 CFLAGS = c++ -std=c++98 -Wall -Wextra -Werror
 
-FILES = main.cpp phoneBook.cpp
+FILES = main.cpp phoneBook.cpp contact.cpp
 HEADERS = phoneBook.hpp contact.hpp
 OBJS = $(FILES:.cpp=.o)
 
