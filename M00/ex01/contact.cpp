@@ -1,6 +1,6 @@
 #include "contact.hpp"
 
-std::string get_str(std::string str)
+std::string Contact::get_str(std::string str)
 {
 	if (str.length() < 10)
 		return str;
@@ -38,5 +38,5 @@ void Contact::display_details(void)
 	std::cout << "Nickname: " << this->_nickname << std::endl;
 	std::cout << "Phone number: " << this->_phonenumber << std::endl;
 	std::cout << "Darkest secret: " << this->_darkest_secret << std::endl;
-	std::cout << " --------------------------------------------" << std::endl;
+	std::cout << "---------------------------------------------" << std::endl;
 }

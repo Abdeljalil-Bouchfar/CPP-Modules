@@ -27,7 +27,6 @@ void PhoneBook::add(void)
 	if (f.empty())
 	{
 		std::cerr << "Invalid input!" << std::endl;
-		;
 		return;
 	}
 	//
@@ -36,7 +35,6 @@ void PhoneBook::add(void)
 	if (l.empty())
 	{
 		std::cerr << "Invalid input!" << std::endl;
-		;
 		return;
 	}
 	//
@@ -45,7 +43,6 @@ void PhoneBook::add(void)
 	if (n.empty())
 	{
 		std::cerr << "Invalid input!" << std::endl;
-		;
 		return;
 	}
 	//

@@ -15,4 +15,5 @@ public:
 	void set_data(std::string f, std::string l, std::string n, std::string p, std::string d, int i);
 	void display_all(void);
 	void display_details(void);
+	std::string get_str(std::string str);
 };
