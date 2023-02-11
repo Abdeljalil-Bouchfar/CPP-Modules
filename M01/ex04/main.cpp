@@ -2,13 +2,8 @@
 #include <string>
 #include <fstream>
 
-int main(int ac, char **av)
+int replace(char **av)
 {
-	if (ac != 4)
-	{
-		std::cerr << "Invalid number of argements!" << std::endl;
-		return (1);
-	}
 	std::string in_filename = av[1];
 	std::string out_filename = in_filename + ".replace";
 	std::string s1 = av[2];
@@ -23,7 +18,7 @@ int main(int ac, char **av)
 			while (std::getline(infile, content))
 			{
 				int i = content.find(s1);
-				while(i != -1)
+				while (i != -1)
 				{
 					content.erase(i, s1.length());
 					content.insert(i, s2);
@@ -46,4 +41,14 @@ int main(int ac, char **av)
 		return (1);
 	}
 	return (0);
+}
+
+int main(int ac, char **av)
+{
+	if (ac != 4)
+	{
+		std::cerr << "Invalid number of argements!" << std::endl;
+		return (1);
+	}
+	return replace(av);
 }

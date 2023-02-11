@@ -19,6 +19,7 @@ void Zombie::set_name(std::string str)
 
 Zombie::~Zombie()
 {
+	std::cout  << this->_name << ": Destructor called" << std::endl;
 }
 
 /*

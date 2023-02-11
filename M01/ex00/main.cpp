@@ -14,8 +14,8 @@ void randomChump( std::string name )
 
 int main(void)
 {
-	Zombie *obj = newZombie("Zakiiiiii");
+	Zombie *obj = newZombie("Dynamic Zakiiiiii");
 	obj->announce();
-	randomChump("Zakiiiiii");
+	randomChump("Automatic Zakiiiiii");
 	delete(obj);
 }

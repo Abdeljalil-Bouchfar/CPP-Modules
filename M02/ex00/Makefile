@@ -1,8 +1,8 @@
-NAME = violence
+NAME = zombie
 CFLAGS = c++ -std=c++98 -Wall -Wextra -Werror
 
-FILES = main.cpp Weapon.cpp HumanA.cpp HumanB.cpp
-HEADERS = Weapon.hpp HumanA.hpp HumanB.hpp
+FILES = main.cpp Fixed.cpp
+HEADERS = Fixed.hpp
 OBJS = $(FILES:.cpp=.o)
 
 all : $(NAME)
