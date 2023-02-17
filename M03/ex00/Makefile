@@ -1,8 +1,8 @@
 NAME = a.out
 CFLAGS = c++ -std=c++98 -Wall -Wextra -Werror
 
-FILES = main.cpp Fixed.cpp
-HEADERS = Fixed.hpp
+FILES = main.cpp ClapTrap.cpp
+HEADERS = ClapTrap.hpp
 OBJS = $(FILES:.cpp=.o)
 
 all : $(NAME)

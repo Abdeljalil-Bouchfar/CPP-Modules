@@ -65,6 +65,9 @@
 		"utility": "cpp",
 		"vector": "cpp",
 		"__tree": "cpp",
-		"map": "cpp"
+		"map": "cpp",
+		"__bits": "cpp",
+		"clocale": "cpp",
+		"filesystem": "cpp"
 	}
 }
