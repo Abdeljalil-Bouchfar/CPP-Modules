@@ -18,7 +18,7 @@ public:
 	void beRepaired(unsigned int amount);
 	ClapTrap &operator=(ClapTrap const &rhs);
 
-private:
+protected:
 	std::string _name;
 	int _hit_points;
 	int _energy_points;
