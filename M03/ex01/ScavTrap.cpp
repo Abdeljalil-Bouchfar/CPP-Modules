@@ -22,12 +22,11 @@ ScavTrap::ScavTrap(std::string i_name)
 	this->_attack_damage = 20;
 }
 
-ScavTrap::ScavTrap( const ScavTrap & src )
+ScavTrap::ScavTrap(const ScavTrap &src)
 {
 	std::cout << "ScavTrap Copy constructor called" << std::endl;
 	*this = src;
 }
-
 
 /*
 ** -------------------------------- DESTRUCTOR --------------------------------
@@ -38,12 +37,11 @@ ScavTrap::~ScavTrap()
 	std::cout << "ScavTrap Destructor called" << std::endl;
 }
 
-
 /*
 ** --------------------------------- OVERLOAD ---------------------------------
 */
 
-ScavTrap &				ScavTrap::operator=( ScavTrap const & rhs )
+ScavTrap &ScavTrap::operator=(ScavTrap const &rhs)
 {
 	this->_name = rhs._name;
 	this->_hit_points = rhs._hit_points;
@@ -51,7 +49,6 @@ ScavTrap &				ScavTrap::operator=( ScavTrap const & rhs )
 	this->_attack_damage = rhs._attack_damage;
 	return *this;
 }
-
 
 /*
 ** --------------------------------- METHODS ----------------------------------
@@ -75,6 +72,5 @@ void ScavTrap::guardGate()
 /*
 ** --------------------------------- ACCESSOR ---------------------------------
 */
-
 
 /* ************************************************************************** */
