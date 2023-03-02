@@ -4,7 +4,7 @@ void instantiate_test()
 {
 	try
 	{
-		Bureaucrat obj(1, "Hitler");
+		Bureaucrat obj("Hitler", 151);
 		std::cout << obj << std::endl;
 	}
 	catch (const std::exception &e)
@@ -15,7 +15,7 @@ void instantiate_test()
 
 void incr_test()
 {
-	Bureaucrat obj(2, "Hitler");
+	Bureaucrat obj("Hitler", 1);
 
 	std::cout << obj << std::endl;
 	try
@@ -31,7 +31,7 @@ void incr_test()
 
 void decr_test()
 {
-	Bureaucrat obj(149, "Hitler");
+	Bureaucrat obj("Hitler", 150);
 
 	std::cout << obj << std::endl;
 	try
