@@ -1,5 +1,5 @@
 NAME = a.out
-CFLAGS = c++ -std=c++98 -Wall -Wextra -Werror 
+CFLAGS = c++ -std=c++98 -Wall -Wextra -Werror
 
 FILES = main.cpp Animal.cpp Dog.cpp Cat.cpp WrongAnimal.cpp WrongCat.cpp Brain.cpp
 HEADERS = Animal.hpp Dog.hpp Cat.hpp WrongAnimal.hpp WrongCat.hpp Brain.hpp

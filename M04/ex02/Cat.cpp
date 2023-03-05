@@ -6,15 +6,16 @@
 
 Cat::Cat()
 {
+	std::cout << "Cat Default constructor called" << std::endl;
 	this->type = "Cat";
 	this->_brain = new Brain();
-	std::cout << "Cat Default constructor called" << std::endl;
 }
 
 Cat::Cat( const Cat & src )
 {
-	*this = src;
 	std::cout << "Cat Copy constructor called" << std::endl;
+	this->_brain = new Brain();
+	*this = src;
 }
 
 

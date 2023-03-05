@@ -6,15 +6,16 @@
 
 Dog::Dog()
 {
+	std::cout << "Dog Default constructor called" << std::endl;
 	this->type = "Dog";
 	this->_brain = new Brain();
-	std::cout << "Dog Default constructor called" << std::endl;
 }
 
 Dog::Dog( const Dog & src )
 {
-	*this = src;
 	std::cout << "Dog Copy constructor called" << std::endl;
+	this->_brain = new Brain();
+	*this = src;
 }
 
 

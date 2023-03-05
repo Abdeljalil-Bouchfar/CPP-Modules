@@ -6,11 +6,10 @@
 
 int main()
 {
-	const Animal *dog = new Dog();
-	const Animal *cat = new Cat();
-
-	delete dog;
-	delete cat;
+	Dog basic;
+	{
+		Dog tmp = basic;
+	}
 	std::cout << "-------------------------------" << std::endl;
 	Animal **animals = new Animal*[4];
 	for (int i = 0; i < 2; i++)

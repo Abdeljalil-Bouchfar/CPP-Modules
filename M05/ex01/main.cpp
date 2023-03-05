@@ -15,8 +15,8 @@ void instantiate_test()
 
 void sign_test()
 {
-	Form  form("Form_1", 1, 2);
-	Bureaucrat bure("Bure_1", 1);
+	Form  form("Form_1", 2, 1);
+	Bureaucrat bure("Bure_1", 5);
 
 	std::cout << form << std::endl;
 	try
@@ -32,8 +32,8 @@ void sign_test()
 
 int main(void)
 {
-	std::cout << "--------- instantiate test ------------" << std::endl;
+	std::cout << "=============== instantiate test ===============" << std::endl;
 	instantiate_test();
-	std::cout << "--------- sign test --------------" << std::endl;
+	std::cout << "\n=============== sign test ===============" << std::endl;
 	sign_test();
 }
