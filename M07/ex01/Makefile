@@ -1,8 +1,8 @@
-NAME = phoneBook
-CFLAGS = c++ -std=c++98 -Wall -Wextra -Werror
+NAME = a.out
+CFLAGS = c++ -std=c++98 -Wall -Wextra -Werror 
 
-FILES = main.cpp phoneBook.cpp contact.cpp
-HEADERS = phoneBook.hpp contact.hpp
+FILES = main.cpp
+HEADERS = iter.hpp 
 OBJS = $(FILES:.cpp=.o)
 
 all : $(NAME)

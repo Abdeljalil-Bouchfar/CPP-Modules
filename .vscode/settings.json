@@ -51,6 +51,23 @@
 		"typeinfo": "cpp",
 		"utility": "cpp",
 		"cmath": "cpp",
-		"__functional_03": "cpp"
+		"__functional_03": "cpp",
+		"__bits": "cpp",
+		"__hash_table": "cpp",
+		"__node_handle": "cpp",
+		"__split_buffer": "cpp",
+		"__tree": "cpp",
+		"array": "cpp",
+		"clocale": "cpp",
+		"complex": "cpp",
+		"deque": "cpp",
+		"fstream": "cpp",
+		"iomanip": "cpp",
+		"map": "cpp",
+		"optional": "cpp",
+		"sstream": "cpp",
+		"stack": "cpp",
+		"unordered_map": "cpp",
+		"vector": "cpp"
 	}
 }

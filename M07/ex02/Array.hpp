@@ -46,6 +46,12 @@ public:
 			throw std::out_of_range("Index out of range");
 		return _arr[index];
 	}
+	const T &operator[](int index) const
+	{
+		if (index > _size)
+			throw std::out_of_range("Index out of range");
+		return _arr[index];
+	}
 
 private:
 	T *_arr;

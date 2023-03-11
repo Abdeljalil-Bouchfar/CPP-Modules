@@ -1,8 +1,8 @@
 NAME = a.out
 CFLAGS = c++ -std=c++98 -Wall -Wextra -Werror 
 
-FILES = main.cpp ScalarConverter.cpp
-HEADERS = ScalarConverter.hpp 
+FILES = main.cpp
+HEADERS = whatever.hpp 
 OBJS = $(FILES:.cpp=.o)
 
 all : $(NAME)
