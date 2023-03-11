@@ -4,58 +4,49 @@
 #include <iostream>
 #include <string>
 
-template <typename T>
-class Array
-{
+template <typename T> class Array {
 
 public:
-	Array()
-	{
-		this->_arr = new T[0];
-		this->_size = 0;
-	}
-	Array(unsigned int n)
-	{
-		this->_arr = new T[n];
-		_size = n;
-	}
-	Array(Array const &src)
-	{
-		this->_arr =  nullptr;
-		*this = src;
-	}
-	~Array()
-	{
-		delete [] this->_arr;
-	}
+  Array() {
+    this->_arr = new T[0];
+    this->_len = 0;
+  }
+  Array(unsigned int n) {
+    this->_arr = new T[n];
+    this->_len = n;
+  }
+  Array(Array const &src) {
+    this->_arr = nullptr;
+    *this = src;
+  }
+  ~Array() { delete[] this->_arr; }
 
-	Array &operator=(Array const &rhs)
-	{
-		if(this->_arr)
-			delete [] this->_arr;
-		this->_arr = new T[rhs._size];
-		this->_size = rhs._size;
-		for (int i = 0; i < this->_size; i++)
-			this->_arr[i] = rhs._arr[i];
-		return *this;
-	}
+  Array &operator=(Array const &rhs) {
+    if (this->_arr)
+      delete[] this->_arr;
+    this->_arr = new T[rhs._len];
+    this->_len = rhs._len;
+    for (int i = 0; i < this->_len; i++)
+      this->_arr[i] = rhs._arr[i];
+    return *this;
+  }
 
-	T &operator[](int index)
-	{
-		if (index > _size)
-			throw std::out_of_range("Index out of range");
-		return _arr[index];
-	}
-	const T &operator[](int index) const
-	{
-		if (index > _size)
-			throw std::out_of_range("Index out of range");
-		return _arr[index];
-	}
+  T &operator[](int index) {
+    if (index >= this->_len || index < 0)
+      throw std::out_of_range("Index out of range");
+    return _arr[index];
+  }
+  const T &operator[](int index) const {
+    if (index >= this->_len || index < 0)
+      throw std::out_of_range("Index out of range");
+    return _arr[index];
+  }
+
+  int size() const { return this->_len; }
 
 private:
-	T *_arr;
-	int _size;
+  T *_arr;
+  int _len;
 };
 
-#endif /* *********************************************************** ARRAY_H */
+#endif
