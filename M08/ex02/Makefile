@@ -1,7 +1,7 @@
 NAME = a.out
 CFLAGS = c++ -std=c++98 -Wall -Wextra -Werror 
 
-FILES = main.cpp MutantStack.cpp
+FILES = main.cpp
 HEADERS = MutantStack.hpp 
 OBJS = $(FILES:.cpp=.o)
 
