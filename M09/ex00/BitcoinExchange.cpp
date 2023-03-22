@@ -10,7 +10,9 @@ BitcoinExchange::BitcoinExchange()
 	std::string line;
 	std::getline(data, line);
 	while (std::getline(data, line))
-		this->_database[line.substr(0, 10)] = std::stof(line.substr(11, line.length()));
+	{
+		this->_database[line.substr(0, 10)] = strtod(line.substr(11, line.length()).c_str(), NULL);
+	}
 }
 
 BitcoinExchange::BitcoinExchange(const BitcoinExchange &src)
@@ -40,11 +42,12 @@ BitcoinExchange &BitcoinExchange::operator=(BitcoinExchange const &rhs)
 ** --------------------------------- METHODS ----------------------------------
 */
 
-void BitcoinExchange::get_value(std::string date, float amount)
+float BitcoinExchange::get_value(std::string &date, float &amount)
 {
 	std::map<std::string, float>::iterator it = this->_database.upper_bound(date);
-	it--;
-	std::cout << date << " => " << amount << " = " << (it->second * amount) << std::endl;
+	if (it != this->_database.begin())
+		it--;
+	return (amount * it->second);
 }
 
 /*

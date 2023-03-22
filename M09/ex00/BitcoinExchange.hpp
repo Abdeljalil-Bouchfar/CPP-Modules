@@ -15,7 +15,7 @@ class BitcoinExchange
 		BitcoinExchange( BitcoinExchange const & src );
 		~BitcoinExchange();
 
-		void get_value(std::string date, float amount);
+		float get_value(std::string &date, float &amount);
 		BitcoinExchange &		operator=( BitcoinExchange const & rhs );
 
 	private:

@@ -69,6 +69,8 @@
         "stack": "cpp",
         "unordered_map": "cpp",
         "vector": "cpp",
-        "filesystem": "cpp"
+        "filesystem": "cpp",
+        "list": "cpp",
+        "queue": "cpp"
     }
 }
