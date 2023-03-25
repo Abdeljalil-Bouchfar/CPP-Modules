@@ -92,11 +92,11 @@ The structure, or building blocks, of object-oriented programming, include the f
     > 
     Imagine a big company with multiple departments.
 
-    Each department offers services to people, like "customer service calls": -> *public methods*.
+    Each department offers services to people, like "customer service calls": public methods.
 
-    Then, departments interact with each other, request information, and delegate tasks: -> *protected methods*.
+    Then, departments interact with each other, request information, and delegate tasks: protected methods.
 
-    And finally, some duties are managed internally in each department, for example, pays their employees: -> *private methods*.
+    And finally, some duties are managed internally in each department, for example, pays their employees: private methods.
 
     Thus, encapsulation would be to set some services as public, protected, and private depending on who can request them.
         
