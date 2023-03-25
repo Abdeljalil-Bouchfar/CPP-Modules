@@ -1,6 +1,8 @@
 # CPP-NOTES
 In this repository, I'll be sharing my notes on the CPP-Modules, including explanations of all the concepts I learned while doing this project, as well as some helpful resources.
 
+* [CPP Cheat Sheet 📖](https://github.com/Abdeljalil-Bouchfar/CPP-Modules/blob/master/CPP_Cheat_Sheet.pdf)
+
 * [Constructors and Destructor](https://github.com/Abdeljalil-Bouchfar/CPP-Modules#constructors-and-destructor)
 * [Namespaces](https://github.com/Abdeljalil-Bouchfar/CPP-Modules#namespaces)
 * [Member functions](https://github.com/Abdeljalil-Bouchfar/CPP-Modules#member-functions)
