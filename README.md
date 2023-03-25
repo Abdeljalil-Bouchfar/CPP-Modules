@@ -167,7 +167,7 @@ int main() {
 
 ## Operator overloading
     
-In C++, operator overloading is a feature that allows you tospecify how objects of a class should behave when an operator isapplied to them.
+Operator overloading is a feature that allows you tospecify how objects of a class should behave when an operator isapplied to them.
 
 For example, you can overload the addition operator **`+`** foryour custom class to allow objects of your class to be addedtogether. When you define the addition operator for your class,you specify what the result of the addition should be.
 
@@ -335,7 +335,7 @@ Fixed-point numbers are commonly used in computer systems wherefloating-point op
     
 ## Access specifiers
     
-C++ access specifiers are used for determining or setting the boundary for the availability of classmembers(data members and member functions)  beyond that class. For example,  the class members are groupedintosections, private protected and public. These keywords are called access specifiers which definetheaccessibility or visibility level of class members.
+Access specifiers are used for determining or setting the boundary for the availability of classmembers(data members and member functions)  beyond that class. For example,  the class members are groupedintosections, private protected and public. These keywords are called access specifiers which definetheaccessibility or visibility level of class members.
 
 By default the class members are private. So if the visibility labels are missing then by default, alltheclass members are private.
 
@@ -348,7 +348,7 @@ In inheritance, it is important to know when the objects of the derived class ca
 | private | Private members are only accessible from within the class itself, and cannot be accessed byanyobjects or functions outside of the class. This is often used for data members that should not bemodifieddirectly, as well as for member functions that are only used internally by the class itself. |
 
 ## Inheritance
-Inheritance in C++ is a way to create a new class (known as a derived class) from an existing class (knownas   a base class). The derived class inherits all `non-private` data members and all `non-private` memberfunctions of the base class and can also add its own data members and member functions. 
+Inheritance is a way to create a new class (known as a derived class) from an existing class (knownas   a base class). The derived class inherits all `non-private` data members and all `non-private` memberfunctions of the base class and can also add its own data members and member functions. 
 
 ```cpp
 #include <iostream>
@@ -392,7 +392,7 @@ The `virtual` keyword is used to declare a virtual function. A virtual function 
 
 When a derived class overrides a virtual function, it provides its own implementation of the function thatis used instead of the implementation provided by the base class. This allows classes to provide a commoninterface, while still allowing each class to provide its own unique implementation of the interface.
 
-Here's an example of using virtual functions in C++:
+Here's an example of using virtual functions:
 
 ```cpp
 class Animal {
@@ -442,7 +442,7 @@ An abstract class is a class that cannot be instantiated on its own and is desig
 
 The purpose of an abstract class is to provide an interface for derived classes to follow. It defines a setof functions that derived classes must implement in order to be considered a concrete implementation of theabstract class. By providing an interface for derived classes, an abstract class can be used as a templatefor a family of related classes, providing a common base for all of them.
 
-An example of an abstract class in C++ is:
+An example of an abstract class:
 
 ```cpp
 class Shape {
@@ -466,15 +466,15 @@ A **`deep copy`**, on the other hand, creates a new copy of the pointed-to data.
 In general, deep copies are safer than shallow copies, because they do not share any data between objects.However, deep copies can be more expensive to create than shallow copies, because they require duplicatingall of the pointed-to data.
     
 ## Exceptions 
-Exceptions are a mechanism in C++ for handling errors and abnormal situations that occur during programexecution. When an exception is thrown, it is an indication that something has gone wrong and the normalflow of the program cannot continue.
+Exceptions are a mechanism for handling errors and abnormal situations that occur during programexecution. When an exception is thrown, it is an indication that something has gone wrong and the normalflow of the program cannot continue.
 
-In C++, exceptions are represented by objects that are thrown by a function using the **`throw`** keyword.The thrown object can be of any type, but it is typically derived from the **`std::exception`** class.
+Exceptions are represented by objects that are thrown by a function using the **`throw`** keyword.The thrown object can be of any type, but it is typically derived from the **`std::exception`** class.
 
 The process of handling exceptions involves three main components: the code that throws the exception, thecode that handles the exception, and the system that facilitates the transfer of control between them.
 
 The basic syntax for handling exceptions in C++ is the **`try-catch`** block. The code that might throw anexception is enclosed in the **`try`** block, and the code that handles the exception is enclosed in one ormore **`catch`** blocks. If an exception is thrown in the **`try`** block, the program jumps immediately tothe appropriate **`catch`** block, skipping any remaining code in the **`try`** block.
 
-Here is an example of using exceptions in C++:
+Here is an example of using exceptions:
 
 ```cpp
 #include <iostream>
@@ -530,7 +530,7 @@ In C++, there are four types of casting operators.
 
 - **[static_cast](https://en.cppreference.com/w/cpp/language/static_cast)**
     
-    In C++, `static_cast` is a casting operator that allows you to perform conversions between relatedtypes, such as converting an `int` to a `float` or a `float` to an `int`. It is a compile-time operatorthat performs no runtime checks, so it is relatively fast and efficient.
+    `Static_cast` is a casting operator that allows you to perform conversions between relatedtypes, such as converting an `int` to a `float` or a `float` to an `int`. It is a compile-time operatorthat performs no runtime checks, so it is relatively fast and efficient.
     
     `static_cast` is used to convert between built-in types, such as integers and floating-point numbers,as well as between user-defined types, such as classes and structures. It can also be used to castbetween pointers and references to related types.
     
@@ -558,7 +558,7 @@ In C++, there are four types of casting operators.
     
 - **[reinterpret_cast](https://en.cppreference.com/w/cpp/language/reinterpret_cast)**
     
-    In C++, `reinterpret_cast` is a casting operator that allows you to convert between incompatible types,such as between pointers to unrelated classes, or between pointers and integers. It is a compile-timeoperator that performs no runtime checks, so it is relatively fast and efficient, but it can bedangerous if used incorrectly.
+    `Reinterpret_cast` is a casting operator that allows you to convert between incompatible types,such as between pointers to unrelated classes, or between pointers and integers. It is a compile-timeoperator that performs no runtime checks, so it is relatively fast and efficient, but it can bedangerous if used incorrectly.
     
     `reinterpret_cast` is used to perform low-level conversions that cannot be done using other castingoperators, such as `static_cast` or `dynamic_cast`. It does not perform any type of checking, so it isup to the programmer to ensure that the conversion is safe and valid.
     
@@ -575,7 +575,7 @@ In C++, there are four types of casting operators.
     
 - **[dynamic_cast](https://en.cppreference.com/w/cpp/language/dynamic_cast)**
     
-    `dynamic_cast` is a casting operator in C++ that allows you to perform runtime type checking and tosafely convert pointers and references to classes up, down, and sideways along the class hierarchy. Itis used to convert pointers and references to base classes to pointers and references to derivedclasses (downcasting) and vice versa (upcasting) and to perform cross-casting between unrelated classesin a class hierarchy.
+    `Dynamic_cast` is a casting operator that allows you to perform runtime type checking and tosafely convert pointers and references to classes up, down, and sideways along the class hierarchy. Itis used to convert pointers and references to base classes to pointers and references to derivedclasses (downcasting) and vice versa (upcasting) and to perform cross-casting between unrelated classesin a class hierarchy.
     
     `dynamic_cast` checks at runtime whether the type of the object pointed to by the pointer or referenceis compatible with the type being cast to. If the types are not compatible, `dynamic_cast` returns anull pointer (for pointers) or throws a `std::bad_cast` exception (for references). This makes it saferthan `reinterpret_cast` and `static_cast`, which can cause undefined behavior if used incorrectly.
     
@@ -609,7 +609,7 @@ In C++, there are four types of casting operators.
     
 - **[const_cast](https://en.cppreference.com/w/cpp/language/const_cast)**
     
-    In C++, `const_cast` is a type of casting operator that allows you to remove the constness of anobject. It is typically used to cast away the constness of a pointer or reference to an object, whichcan be useful in situations where you need to modify an object that is declared as const.
+    `Const_cast` is a type of casting operator that allows you to remove the constness of anobject. It is typically used to cast away the constness of a pointer or reference to an object, whichcan be useful in situations where you need to modify an object that is declared as const.
     
     For example, consider the following code:
     
