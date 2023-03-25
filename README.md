@@ -662,4 +662,5 @@ private:
 ## Iterators 
 An iterator is an object that can iterate over elements in a C++ Standard Library container and provideaccess to individual elements. The C++ Standard Library containers all provide iterators so that algorithmscan access their elements in a standard way without having to be concerned with the type of container theelements are stored in.
 
-You can use iterators in a number of different ways, such as iterating over the elements of a container toperform some operation on them or using algorithms like std::find or std::sort to manipulate the contentsof a container. Overall, iterators are a powerful and flexible tool in C++ that allows you to work withcontainers in a generic and efficient way.
+You can use iterators in a number of different ways, such as iterating over the elements of a container to perform some operation on them or using algorithms like std::find or std::sort to manipulate the contents of a container. Overall, iterators are a powerful and flexible tool in C++ that allows you to work withcontainers in a generic and efficient way.
+* [More about iterators](https://learn.microsoft.com/en-us/cpp/standard-library/iterators?view=msvc-170)
