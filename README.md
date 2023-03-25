@@ -2,6 +2,9 @@
 In this repository, I'll be sharing my notes on the CPP-Modules, including explanations of all the concepts I learned while doing this project, as well as some helpful resources.
 
 * [CPP Cheat Sheet 📝](https://github.com/Abdeljalil-Bouchfar/CPP-Modules/blob/master/CPP_Cheat_Sheet.pdf)
+* [OOP Definition](https://github.com/Abdeljalil-Bouchfar/CPP-Modules#oop-definition)
+* [The structure of OOP](https://github.com/Abdeljalil-Bouchfar/CPP-Modules#the-structure-of-oop)
+* [The Four Pillars of OOP](https://github.com/Abdeljalil-Bouchfar/CPP-Modules#the-four-pillars-of-oop)
 * [Constructors and Destructor](https://github.com/Abdeljalil-Bouchfar/CPP-Modules#constructors-and-destructor)
 * [Namespaces](https://github.com/Abdeljalil-Bouchfar/CPP-Modules#namespaces)
 * [Member functions](https://github.com/Abdeljalil-Bouchfar/CPP-Modules#member-functions)
@@ -20,6 +23,94 @@ In this repository, I'll be sharing my notes on the CPP-Modules, including expla
 * [Casting](https://github.com/Abdeljalil-Bouchfar/CPP-Modules#casting)
 * [Templates](https://github.com/Abdeljalil-Bouchfar/CPP-Modules#templates)
 * [Iterators](https://github.com/Abdeljalil-Bouchfar/CPP-Modules#iterators)
+
+## OOP Definition:
+
+***Object-Oriented Programming (OOP)*** is the term used to describe a programming approach based on ***objects*** and ***classes***. The object-oriented paradigm allows us to organize software as a collection of objects that consist of both data and behavior. This is in contrast to conventional functional programming practice that only loosely connects data and behavior.
+
+Since the 1980s the word 'object' has appeared in relation to programming languages, with almost all languages developed since 1990 having object-oriented features. Some languages have even had object-oriented features retro-fitted. It is widely accepted that object-oriented programming is the most important and powerful way of creating software.
+
+## The structure of OOP:
+
+The structure, or building blocks, of object-oriented programming, include the following:
+
+- **Classes**
+    
+    Classes are user-defined data types that act as the blueprint for individual objects, attributes, and methods.
+    
+    If we think of a real-world object, such as a television it will have several features and properties:
+    
+    - We do not have to open the case to use it.
+    - We have some controls to use it (buttons on the box, or a remote control).
+    - We can still understand the concept of a television, even if it is connected to a DVD player.
+    - It is complete when we purchase it, with any external requirements well documented.
+    - The TV will not crash!
+    
+    In many ways, this compares very well to the notion of a class.
+    
+    A class should:
+    
+    - Provide a well-defined interface - such as the remote control of the television.
+    - Represent a clear concept - such as the concept of television.
+    - Be complete and well-documented - the television should have a plug and should have a manual that documents all features.
+    - The code should be robust - it should not crash, like the television.
+    
+    With a functional programming language (like C) we would have the component parts of the television scattered everywhere and we would be responsible for making them work correctly - there would be no case surrounding the electronic components.
+        
+    Classes allow us a way to represent complex structures within a programming language. They have two components:
+    
+    - States - (or data) are the values that the object has.
+    - Methods - (or behavior) are the ways in which the object can interact with its data, the actions.
+- **Objects**
+    
+    An ***object*** is an instance of a class. You could think of a class as the description of a concept, and an object as the realization of this description to create an independent distinguishable entity. For example, in the case of the Television, the class is the set of plans (or blueprints) for a generic television, whereas a television object is the realization of these plans into a real-world physical television. So there would be one set of plans (the class), but there could be thousands of real-world televisions (objects).
+    
+    Objects can correspond to real-world objects or abstract entities(Client, User, Product,...). When a class is defined initially, the description is the only object that is defined.
+    
+    Objects should have their own identity and be independent of each other. For example, if the channel is changed on one television it will not change on other televisions.
+    
+- **Methods**
+    
+    Methods are functions (or procedures) that are defined inside a class that describe the behaviors of an object. Each method contained in class definitions starts with a reference to an instance object. Additionally, the subroutines contained in an object are called instance methods. Programmers use methods for reusability or keeping functionality encapsulated inside one object at a time.
+    
+- **Attributes**
+    
+    Attributes are defined in the class template and represent the state of an object. Objects will have data stored in the attributes field. Class attributes belong to the class itself.
+    
+
+## The Four Pillars of OOP:
+
+- Abstraction
+    
+    > Show only necessary things to the user that he required, not extra information (use public, private, protected). Abstraction is done when we need to inherit from a certain class but do not instantiate the objects of that class.
+    > 
+    It is like programming the shared behavior of a Lion, a penguin, and a Salmon. All of them are different, but they share some traits: they all eat, breath, die, etc. That is why abstraction is important because it allows me as a developer to program something like an "Animal" object, that defines their common behavior.
+        
+- Encapsulation
+    
+    > Group all relevant things together. I.e. encapsulation is used to hide the mechanics of the object, allowing the actual implementation of the object to be hidden, so that we don't need to understand how the object works. All we need to understand is the interface that is provided for us.
+    > 
+    Imagine a big company with multiple departments.
+
+    Each department offers services to people, like "customer service calls": -> *public methods*.
+
+    Then, departments interact with each other, request information, and delegate tasks: -> *protected methods*.
+
+    And finally, some duties are managed internally in each department, for example, pays their employees: -> *private methods*.
+
+    Thus, encapsulation would be to set some services as public, protected, and private depending on who can request them.
+        
+- Inheritance
+    
+    > If something already exists, why should I recreate it (same as re-inventing a wheel)? Use inheritance to inherit all things of that class into your class. Inheritance enables you to create new classes that re-use, extend, and modify the behavior that is defined in other classes
+    > 
+    Remember those lions, penguins, and salmons? And remember that they all are *animals.* Well, the inheritance would be, for example, if when an animal is born "birth date" is defined as "today". That behavior would be shared by all animal types and therefore, lions penguins and salmons would inherit the "born behavior" from the animal class.
+        
+- Polymorphism
+    
+    > means "multiple forms". In OOP these multiple forms refer to multiple forms of the same method, where the exact same method name can be used in different classes, or the same method name can be used in the same class with slightly different parameters.
+    >
+    Remember those lions, penguins, and salmons? And remember that they all have a methed walk, this method will take a deffirent form for each animal.
 
 ## Constructors and Destructor:
 
