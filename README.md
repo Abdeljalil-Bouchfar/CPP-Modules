@@ -1,6 +1,25 @@
 # CPP-NOTES
 In this repository, I'll be sharing my notes on the CPP-Modules, including explanations of all the concepts I learned while doing this project, as well as some helpful resources.
 
+* [Constructors and Destructor](https://github.com/Abdeljalil-Bouchfar/CPP-Modules#constructors-and-destructor)
+* [Namespaces](https://github.com/Abdeljalil-Bouchfar/CPP-Modules#namespaces)
+* [Member functions](https://github.com/Abdeljalil-Bouchfar/CPP-Modules#member-functions)
+* [The this pointer](https://github.com/Abdeljalil-Bouchfar/CPP-Modules#the-this-pointer)
+* [References](https://github.com/Abdeljalil-Bouchfar/CPP-Modules#references)
+* [Streams](https://github.com/Abdeljalil-Bouchfar/CPP-Modules#streams)
+* [Pointers to member functions](https://github.com/Abdeljalil-Bouchfar/CPP-Modules#pointers-to-member-functions)
+* [Operator overloading](https://github.com/Abdeljalil-Bouchfar/CPP-Modules#operator-overloading)
+* [Fixed-point numbers](https://github.com/Abdeljalil-Bouchfar/CPP-Modules#fixed-point-numbers)
+* [Access specifiers](https://github.com/Abdeljalil-Bouchfar/CPP-Modules#access-specifiers)
+* [Inheritance](https://github.com/Abdeljalil-Bouchfar/CPP-Modules#inheritance)
+* [Virtual Keyword](https://github.com/Abdeljalil-Bouchfar/CPP-Modules#virtual-keyword)
+* [Abstract class](https://github.com/Abdeljalil-Bouchfar/CPP-Modules#abstract-class)
+* [Deep & Shallow copies](https://github.com/Abdeljalil-Bouchfar/CPP-Modules#deep--shallow-copies)
+* [Exceptions](https://github.com/Abdeljalil-Bouchfar/CPP-Modules#exceptions)
+* [Casting](https://github.com/Abdeljalil-Bouchfar/CPP-Modules#casting)
+* [Templates](https://github.com/Abdeljalil-Bouchfar/CPP-Modules#templates)
+* [Iterators](https://github.com/Abdeljalil-Bouchfar/CPP-Modules#iterators)
+
 ## Constructors and Destructor:
 
 Constructors and destructor are special member functions in C++ classes that are used to initialize and destroy class objects, respectively.
@@ -296,9 +315,9 @@ In C++ numbers can be represented in two ways **Integers** or**Floating-point nu
         
         The first bit is the **`sign bit`**, with 0 representing apositive number and 1 representing a negative number. Thenext **N** bits represent the **`exponent`**, and thefinal **N** bits represent the `**significand**` (ormantissa).
         
-        [Decimal to IEEE 754 Floating Point Representation](https://www.youtube.com/watch?v=8afbTaA-gOQ)
+        * [Decimal to IEEE 754 Floating Point Representation](https://www.youtube.com/watch?v=8afbTaA-gOQ)
         
-        [IEEE 754 Floating Point Representation to its DecimalEquivalent](https://www.youtube.com/watch?v=LXF-wcoeT0o)
+        * [IEEE 754 Floating Point Representation to its DecimalEquivalent](https://www.youtube.com/watch?v=LXF-wcoeT0o)
         
 
 Fixed-point numbers are commonly used in computer systems wherefloating-point operations are not supported or are too slow(whenperformance is more important than precision).
@@ -367,7 +386,7 @@ int main() {
 
 In this example, the **`Shape`** class is the base class and the **`Rectangle`** class is the derivedclass.The **`Rectangle`** class inherits the **`setWidth`** and **`setHeight`** member functions from the**`Shape`** class and also adds its own member function **`getArea`**. The **`getArea`** function usesthe**`width`** and **`height`** data members which are inherited from the **`Shape`** class.
     
-## Virtual
+## Virtual Keyword
 The `virtual` keyword is used to declare a virtual function. A virtual function is a function that can beoverridden by a derived class, allowing the derived class to provide its own implementation of the function.
 
 When a derived class overrides a virtual function, it provides its own implementation of the function thatis used instead of the implementation provided by the base class. This allows classes to provide a commoninterface, while still allowing each class to provide its own unique implementation of the interface.
@@ -638,7 +657,7 @@ private:
 - `template <typename T>` vs `template <class T>`   
     there is no difference between using **`typename`** or **`class`** as a template parameter declarationkeyword, in fact, the **`typename`** keyword was added to C++ specifically to make template programmingmore readable and expressive. When used as a template parameter declaration, **`typename`** indicatesthat the dependent name that follows refers to a type. On the other hand, when **`class`** is used, itindicates that the dependent name could refer to a class type, but it could also refer to other thingssuch as a function or a variable.
 
-[More about Templates](https://cplusplus.com/doc/oldtutorial/templates/)
+* [More about Templates](https://cplusplus.com/doc/oldtutorial/templates/)
 ## Iterators 
 An iterator is an object that can iterate over elements in a C++ Standard Library container and provideaccess to individual elements. The C++ Standard Library containers all provide iterators so that algorithmscan access their elements in a standard way without having to be concerned with the type of container theelements are stored in.
 
