@@ -1,7 +1,7 @@
 # CPP-NOTES
 In this repository, I'll be sharing my notes on the CPP-Modules, including explanations of all the concepts I learned while doing this project, as well as some helpful resources.
 
-* [CPP Cheat Sheet 📝](https://github.com/Abdeljalil-Bouchfar/CPP-Modules/blob/master/CPP_Cheat_Sheet.pdf)
+* [CPP Cheat Sheet (pdf 📝)](https://github.com/Abdeljalil-Bouchfar/CPP-Modules/blob/master/CPP_Cheat_Sheet.pdf)
 * [OOP Definition](https://github.com/Abdeljalil-Bouchfar/CPP-Modules#oop-definition)
 * [The structure of OOP](https://github.com/Abdeljalil-Bouchfar/CPP-Modules#the-structure-of-oop)
 * [The Four Pillars of OOP](https://github.com/Abdeljalil-Bouchfar/CPP-Modules#the-four-pillars-of-oop)
