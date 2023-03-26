@@ -145,7 +145,7 @@ Member functions are operators and functions that have theirdefinition or protot
     
 ## The this pointer
     
-The **`this`** pointer **(the self keyword)** is a pointeraccessible only within the nonstatic member functions ofa **`class`**, **`struct`**, or **`union`**  type. It points tothe object for which the member function is called. Static memberfunctions don't have a **`this`** pointer.
+The **`this`** pointer **(the self keyword)** is a pointeraccessible only within the nonstatic member functions of a **`class`**, **`struct`**, or **`union`**  type. It points tothe object for which the member function is called.
 * [More about The this pointer](https://learn.microsoft.com/en-us/cpp/cpp/this-pointer?view=msvc-170)
     
 ## References
