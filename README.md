@@ -131,13 +131,16 @@ class Car {
 ```
     
 **Note:** It is important to note that if a class allocates resources during its lifetime, it should also define a destructor to release those resources. Failure to do so can result in memory leaks and other issues. Additionally, if a class defines a constructor, it is a good practice to also define a default constructor and a copy constructor to ensure that the class can be properly initialized and copied.
-* [More about constructors](https://learn.microsoft.com/en-us/cpp/cpp/constructors-cpp?view=msvc-170)
-* [More about destructors](https://learn.microsoft.com/en-us/cpp/cpp/destructors-cpp?view=msvc-170)
+
+🔗  [More about constructors](https://learn.microsoft.com/en-us/cpp/cpp/constructors-cpp?view=msvc-170)
+
+🔗  [More about destructors](https://learn.microsoft.com/en-us/cpp/cpp/destructors-cpp?view=msvc-170)
     
 ## Namespaces
     
 A namespace is a declarative region that provides a scope to the identifiers inside it(**names of** types, functions, variables…), it’s used to organize code into logical groups and prevent name collisions that can occur especially when your code base includes multiple libraries.
-* [More about Namespaces](https://learn.microsoft.com/en-us/cpp/cpp/namespaces-cpp?view=msvc-170)
+
+🔗  [More about Namespaces](https://learn.microsoft.com/en-us/cpp/cpp/namespaces-cpp?view=msvc-170)
 
 ## Member functions
     
@@ -146,7 +149,8 @@ Member functions are operators and functions that have theirdefinition or protot
 ## The this pointer
     
 The **`this`** pointer **(the self keyword)** is a pointeraccessible only within the nonstatic member functions of a **`class`**, **`struct`**, or **`union`**  type. It points tothe object for which the member function is called.
-* [More about The this pointer](https://learn.microsoft.com/en-us/cpp/cpp/this-pointer?view=msvc-170)
+
+🔗  [More about The this pointer](https://learn.microsoft.com/en-us/cpp/cpp/this-pointer?view=msvc-170)
     
 ## References
     
@@ -177,7 +181,8 @@ When the reference variable **`r`** is used in the code, thecompiler follows the
 It's worth noting that the size of a reference variable is thesize of a pointer on the platform, it takes the same amount ofmemory as a pointer.
 
 In conclusion, references in C++ are implemented as pointersinternally, and the compiler uses the memory address stored in thereference variable to access the value of the original variable.This allows the programmer to use the reference variable as if itwere the original variable, while still maintaining the benefitsof working with pointers, such as the ability to manipulate largedata structures more efficiently.
-* [More about References](https://learn.microsoft.com/en-us/cpp/cpp/references-cpp?view=msvc-170)
+
+🔗  [More about References](https://learn.microsoft.com/en-us/cpp/cpp/references-cpp?view=msvc-170)
     
 ## Streams
     
@@ -218,7 +223,7 @@ int main() {
     return 0;
 }
 ```
-* [More about Streams](https://cplusplus.com/reference/iolibrary/)
+🔗  [More about Streams](https://cplusplus.com/reference/iolibrary/)
 
 ## Pointers to member functions
     
@@ -254,7 +259,8 @@ int main() {
  ```
  
  It's worth noting that, pointers to member functions are differentfrom pointers to non-member functions and also different frompointers to data members. Pointers to member functions require aninstance of the class to call the function on and also require theuse of the **`->*`** or **`.*`** operator when calling thefunction.
-* [More about Pointers to member functions](https://www.ibm.com/docs/en/zos/2.4.0?topic=only-pointers-members-c)
+ 
+🔗  [More about Pointers to member functions](https://www.ibm.com/docs/en/zos/2.4.0?topic=only-pointers-members-c)
 
 ## Operator overloading
     
@@ -292,93 +298,7 @@ a.value = 1;
 b.value = 2;
 c = a + b; // calls operator+
 ```
-
-- **Types of operator overloading:**
-    1. Member operator overload
-        
-        An operator overload is defined as a member function of aclass. The overloaded operator is called on the left-handoperand.
-        
-        ```cpp
-        class MyClass {
-        public:
-            MyClass operator+(const MyClass& other) const;
-        };
-        ```
-        
-    2. Friend operator overload
-        
-        An operator overload is declared as a friend function of aclass. This allows the operator to access the privatemembers of the class.
-        
-        ```cpp
-        class MyClass {
-        public:
-            // declare operator<< as a friend of MyClass
-            friend std::ostream& operator<<(std::ostream& os,const MyClass& obj);
-        };
-        ```
-        
-    3. Global operator overload
-        
-        An operator overload is defined as a standalone functionoutside of any class. The operator takes two operands asarguments.
-        
-        ```cpp
-        class MyClass {
-            // class definition
-        };
-        
-        MyClass operator+(const MyClass& lhs, const MyClass& rhs) {
-            MyClass result;
-            // perform addition on lhs and rhs
-            return result;
-        }
-        ```
-        
-    4. Conversion operator overload
-        
-        An operator overload that allows an object of a class tobe converted to a different type. The operator is definedas a member function and returns the target type.
-        
-        ```cpp
-        class MyClass {
-        public:
-            operator int() const {
-                // convert MyClass object to int
-                return 42;
-            }
-        };
-        ```
-        
-    5. Increment and decrement operator overloading
-        
-        Operator overloads for the pre-increment, post-increment,pre-decrement, and post-decrement operators. Theseoperators modify the value of the operand.
-        
-        ```cpp
-        class MyClass {
-        public:
-        		// Pre-increment operator
-        		MyClass &operator++();
-        		// Post-increment operator
-        		MyClass operator++(int);
-        		// Pre-decrement operator
-        		MyClass &operator--();
-        		// Post-decrement operator
-        		MyClass operator--(int);
-        };
-        ```
-        
-    6. Subscript operator overload
-        
-        An operator overload that allows an object of a class tobe accessed using the subscript notation. The operator isdefined as a member function and takes an index argument.
-        
-        ```cpp
-        class MyClass {
-        public:
-            int operator[](int index) const {
-                // return element at index in MyClass object
-                return elements[index];
-            }
-        };
-        ```
-        
+     
 ## Fixed-point numbers
     
 In C++ numbers can be represented in two ways **Integers** or**Floating-point numbers**,
@@ -407,9 +327,9 @@ In C++ numbers can be represented in two ways **Integers** or**Floating-point nu
         
         The first bit is the **`sign bit`**, with 0 representing apositive number and 1 representing a negative number. Thenext **N** bits represent the **`exponent`**, and thefinal **N** bits represent the `**significand**` (ormantissa).
         
-        * [Decimal to IEEE 754 Floating Point Representation](https://www.youtube.com/watch?v=8afbTaA-gOQ)
+        🔗  [Decimal to IEEE 754 Floating Point Representation](https://www.youtube.com/watch?v=8afbTaA-gOQ)
         
-        * [IEEE 754 Floating Point Representation to its DecimalEquivalent](https://www.youtube.com/watch?v=LXF-wcoeT0o)
+        🔗  [IEEE 754 Floating Point Representation to its DecimalEquivalent](https://www.youtube.com/watch?v=LXF-wcoeT0o)
         
 
 Fixed-point numbers are commonly used in computer systems wherefloating-point operations are not supported or are too slow(whenperformance is more important than precision).
@@ -420,9 +340,9 @@ Fixed-point numbers are commonly used in computer systems wherefloating-point op
     
     Fixed-point representation has some advantages overfloating-point representation, such as simpler arithmeticoperations and lower memory usage. However, it has somelimitations as well, such as a smaller range and lowerprecision compared to floating-point numbers.
     
-    [Introduction to Fixed Point Number Representation](https:/inst.eecs.berkeley.edu//~cs61c/sp06/handout/fixedpt.html)
+    🔗  [Introduction to Fixed Point Number Representation](https:/inst.eecs.berkeley.edu//~cs61c/sp06/handout/fixedpt.html)
     
-    [Fixed Point Arithmetic in C Programming](https:/stackoverflow.com/questions/10067510fixed-point-arithmetic-in-c-programming)
+    🔗  [Fixed Point Arithmetic in C Programming](https:/stackoverflow.com/questions/10067510fixed-point-arithmetic-in-c-programming)
     
 ## Access specifiers
     
@@ -626,10 +546,13 @@ In C++, there are four types of casting operators.
 | const_cast\<T\>(expr) | Removes const, volatile, and __unaligned attributes from a type. | Compile-time | Value of type T |
 | reinterpret_cast\<T\>(expr) | Converts between types by reinterpreting the underlying bit pattern. | Compile-time | Value of type T |
 
-* [static_cast](https://en.cppreference.com/w/cpp/language/static_cast)
-* [reinterpret_cast](https://en.cppreference.com/w/cpp/language/reinterpret_cast)
-* [dynamic_cast](https://en.cppreference.com/w/cpp/language/dynamic_cast)
-* [const_cast](https://en.cppreference.com/w/cpp/language/const_cast)
+🔗  [static_cast](https://en.cppreference.com/w/cpp/language/static_cast)
+
+🔗  [reinterpret_cast](https://en.cppreference.com/w/cpp/language/reinterpret_cast)
+
+🔗  [dynamic_cast](https://en.cppreference.com/w/cpp/language/dynamic_cast)
+
+🔗  [const_cast](https://en.cppreference.com/w/cpp/language/const_cast)
     
 ## Templates
 Templates are a powerful feature that allows the creation of generic classes and functions that can workwith different data types. They can be used to create a single implementation of a class or function thatcan be used with any data type, without having to create separate implementations for each data type.
@@ -664,10 +587,11 @@ private:
 - `template <typename T>` vs `template <class T>`   
     there is no difference between using **`typename`** or **`class`** as a template parameter declarationkeyword, in fact, the **`typename`** keyword was added to C++ specifically to make template programmingmore readable and expressive. When used as a template parameter declaration, **`typename`** indicatesthat the dependent name that follows refers to a type. On the other hand, when **`class`** is used, itindicates that the dependent name could refer to a class type, but it could also refer to other thingssuch as a function or a variable.
 
-* [More about Templates](https://cplusplus.com/doc/oldtutorial/templates/)
+🔗  [More about Templates](https://cplusplus.com/doc/oldtutorial/templates/)
 
 ## Iterators 
 An iterator is an object that can iterate over elements in a C++ Standard Library container and provideaccess to individual elements. The C++ Standard Library containers all provide iterators so that algorithmscan access their elements in a standard way without having to be concerned with the type of container theelements are stored in.
 
 You can use iterators in a number of different ways, such as iterating over the elements of a container to perform some operation on them or using algorithms like std::find or std::sort to manipulate the contents of a container. Overall, iterators are a powerful and flexible tool in C++ that allows you to work withcontainers in a generic and efficient way.
-* [More about iterators](https://learn.microsoft.com/en-us/cpp/standard-library/iterators?view=msvc-170)
+
+🔗  [More about iterators](https://learn.microsoft.com/en-us/cpp/standard-library/iterators?view=msvc-170)
