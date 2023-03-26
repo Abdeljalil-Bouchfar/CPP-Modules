@@ -1,7 +1,7 @@
 # CPP-NOTES
 In this repository, I'll be sharing my notes on the CPP-Modules, including explanations of all the concepts I learned while doing this project, as well as some helpful resources.
 
-* [CPP Cheat Sheet (pdf 📝)](https://github.com/Abdeljalil-Bouchfar/CPP-Modules/blob/master/CPP_Cheat_Sheet.pdf)
+* [CPP Cheat Sheet (pdf 📝)](https://github.com/Abdeljalil-Bouchfar/CPP-Modules/blob/master/assets/CPP_Cheat_Sheet.pdf)
 * [OOP Definition](https://github.com/Abdeljalil-Bouchfar/CPP-Modules#oop-definition)
 * [The structure of OOP](https://github.com/Abdeljalil-Bouchfar/CPP-Modules#the-structure-of-oop)
 * [The Four Pillars of OOP](https://github.com/Abdeljalil-Bouchfar/CPP-Modules#the-four-pillars-of-oop)
@@ -323,7 +323,7 @@ In C++ numbers can be represented in two ways **Integers** or**Floating-point nu
         
         IEEE 754 formats:
         
-        ![Untitled](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/6c9515be-3aab-4ba5-b4d0-4491db7b7d81/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20230325%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20230325T072352Z&X-Amz-Expires=86400&X-Amz-Signature=5ab3310b4f495c7bdd94acc6dc983abe1d0abf61a8769fd7bac1ed46a78ce3ce&X-Amz-SignedHeaders=host&response-content-disposition=filename%3D%22Untitled.png%22&x-id=GetObject)
+        ![Untitled](https://github.com/Abdeljalil-Bouchfar/CPP-Modules/blob/master/assets/IEEE%20754%20formats.png)
         
         The first bit is the **`sign bit`**, with 0 representing apositive number and 1 representing a negative number. Thenext **N** bits represent the **`exponent`**, and thefinal **N** bits represent the `**significand**` (ormantissa).
         
