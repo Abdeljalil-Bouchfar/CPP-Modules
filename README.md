@@ -80,13 +80,13 @@ The structure, or building blocks, of object-oriented programming, include the f
 
 ## The Four Pillars of OOP:
 
-- Abstraction
+1. Abstraction
     
     > Show only necessary things to the user that he required, not extra information (use public, private, protected). Abstraction is done when we need to inherit from a certain class but do not instantiate the objects of that class.
     > 
     It is like programming the shared behavior of a Lion, a penguin, and a Salmon. All of them are different, but they share some traits: they all eat, breath, die, etc. That is why abstraction is important because it allows me as a developer to program something like an "Animal" object, that defines their common behavior.
         
-- Encapsulation
+2. Encapsulation
     
     > Group all relevant things together. I.e. encapsulation is used to hide the mechanics of the object, allowing the actual implementation of the object to be hidden, so that we don't need to understand how the object works. All we need to understand is the interface that is provided for us.
     > 
@@ -100,13 +100,13 @@ The structure, or building blocks, of object-oriented programming, include the f
 
     Thus, encapsulation would be to set some services as public, protected, and private depending on who can request them.
         
-- Inheritance
+3. Inheritance
     
     > If something already exists, why should I recreate it (same as re-inventing a wheel)? Use inheritance to inherit all things of that class into your class. Inheritance enables you to create new classes that re-use, extend, and modify the behavior that is defined in other classes
     > 
     Remember those lions, penguins, and salmons? And remember that they all are *animals.* Well, the inheritance would be, for example, if when an animal is born "birth date" is defined as "today". That behavior would be shared by all animal types and therefore, lions penguins and salmons would inherit the "born behavior" from the animal class.
         
-- Polymorphism
+4. Polymorphism
     
     > means "multiple forms". In OOP these multiple forms refer to multiple forms of the same method, where the exact same method name can be used in different classes, or the same method name can be used in the same class with slightly different parameters.
     >
