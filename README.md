@@ -619,102 +619,17 @@ float f_var = (float) i_var / 42;
 
 In C++, there are four types of casting operators.
 
-- **[static_cast](https://en.cppreference.com/w/cpp/language/static_cast)**
-    
-    `Static_cast` is a casting operator that allows you to perform conversions between relatedtypes, such as converting an `int` to a `float` or a `float` to an `int`. It is a compile-time operatorthat performs no runtime checks, so it is relatively fast and efficient.
-    
-    `static_cast` is used to convert between built-in types, such as integers and floating-point numbers,as well as between user-defined types, such as classes and structures. It can also be used to castbetween pointers and references to related types.
-    
-    Here is an example of using `static_cast` to convert an `int` to a `float`:
-    
-    ```cpp
-    int i = 42;
-    float f = static_cast<float>(i);
-    ```
-    
-    In this example, the `static_cast` operator is used to convert the integer value `42` to afloating-point value `42.0`.
-    
-    `static_cast` can also be used to perform conversions between pointers and references to related types.For example, you can use `static_cast` to convert a pointer to a base class to a pointer to a derivedclass:
-    
-    ```cpp
-    class Base {};
-    
-    class Derived : public Base {};
-    
-    Base* b = new Derived;
-    Derived* d = static_cast<Derived*>(b);
-    ```
-    
-    It's worth noting that `static_cast` is not safe for all types of conversions. It should only be usedwhen you are certain that the conversion is valid and will not result in undefined behavior.
-    
-- **[reinterpret_cast](https://en.cppreference.com/w/cpp/language/reinterpret_cast)**
-    
-    `Reinterpret_cast` is a casting operator that allows you to convert between incompatible types,such as between pointers to unrelated classes, or between pointers and integers. It is a compile-timeoperator that performs no runtime checks, so it is relatively fast and efficient, but it can bedangerous if used incorrectly.
-    
-    `reinterpret_cast` is used to perform low-level conversions that cannot be done using other castingoperators, such as `static_cast` or `dynamic_cast`. It does not perform any type of checking, so it isup to the programmer to ensure that the conversion is safe and valid.
-    
-    Here is an example of using `reinterpret_cast` to convert a pointer to an integer:
-    
-    ```cpp
-    int* p = new int(42);
-    **uintptr_t** i = reinterpret_cast<uintptr_t>(p);
-    ```
-    
-    In this example, the `reinterpret_cast` operator is used to convert the pointer `p` to an integer value`i`, which is an implementation-defined unsigned integer type that is guaranteed to be large enough tohold a pointer value.
-    
-    It's worth noting that `reinterpret_cast` can be dangerous if used incorrectly. It should only be usedwhen you are certain that the conversion is safe and will not result in undefined behavior. In general,it is best to avoid using `reinterpret_cast` unless it is absolutely necessary and to use other castingoperators, such as `static_cast` or `dynamic_cast`, whenever possible.
-    
-- **[dynamic_cast](https://en.cppreference.com/w/cpp/language/dynamic_cast)**
-    
-    `Dynamic_cast` is a casting operator that allows you to perform runtime type checking and tosafely convert pointers and references to classes up, down, and sideways along the class hierarchy. Itis used to convert pointers and references to base classes to pointers and references to derivedclasses (downcasting) and vice versa (upcasting) and to perform cross-casting between unrelated classesin a class hierarchy.
-    
-    `dynamic_cast` checks at runtime whether the type of the object pointed to by the pointer or referenceis compatible with the type being cast to. If the types are not compatible, `dynamic_cast` returns anull pointer (for pointers) or throws a `std::bad_cast` exception (for references). This makes it saferthan `reinterpret_cast` and `static_cast`, which can cause undefined behavior if used incorrectly.
-    
-    Here is an example of using `dynamic_cast` to downcast a pointer to a base class to a pointer to aderived class:
-    
-    ```cpp
-    class Base {
-    public:
-        virtual ~Base() {}
-    };
-    
-    class Derived : public Base {
-    public:
-        void foo() {}
-    };
-    
-    int main() {
-        Base* b = new Derived;
-        Derived* d = dynamic_cast<Derived*>(b);
-        if (d != nullptr) {
-            d->foo();
-        }
-        delete b;
-        return 0;
-    }
-    ```
-    
-    In this example, a pointer to a `Base` object is created and assigned to a `Derived` object. Then,`dynamic_cast` is used to downcast the pointer to a `Derived` pointer. If the downcast is successful,the `foo` function is called on the `Derived` object. If the downcast fails, `d` will be a nullpointer, and the `foo` function will not be called.
-    
-    It's worth noting that `dynamic_cast` should only be used when you need to perform runtime typechecking or when you need to perform upcasting or downcasting between classes in a class hierarchy.
-    
-- **[const_cast](https://en.cppreference.com/w/cpp/language/const_cast)**
-    
-    `Const_cast` is a type of casting operator that allows you to remove the constness of anobject. It is typically used to cast away the constness of a pointer or reference to an object, whichcan be useful in situations where you need to modify an object that is declared as const.
-    
-    For example, consider the following code:
-    
-    ```cpp
-    const int x = 42;
-    int* p = const_cast<int*>(&x);
-    *p = 43;
-    ```
-    
-    In this example, the `const_cast` operator is used to cast away the constness of the `x` variable,which is declared as const. The resulting pointer `p` is then used to modify the value of `x` from 42to 43.
-    
-    It's worth noting that using `const_cast` to modify a const object can be dangerous and should be usedwith caution. Modifying a const object can lead to undefined behavior, and it should only be done whenyou are certain that the modification is safe and necessary.
-    
-    In general, it is best to avoid using `const_cast` whenever possible and to use const-correctprogramming practices to ensure that objects are not modified inappropriately.
+| Operator | Description | Operator Type | Return Value |
+| --- | --- | --- | --- |
+| static_cast\<T\>(expr) | Converts between related types such as derived-to-base and vice versa. Can also be used for conversion between arithmetic types. | Compile-time | Value of type T |
+| dynamic_cast\<T\>(expr) | Safely converts pointers and references to classes up, down, and sideways along the inheritance hierarchy. | Run-time | If successful, a pointer/reference of type T to the complete object. If the cast fails and expr is a pointer, the result is a null pointer. If the cast fails and expr is a reference, the result is a bad_cast exception. |
+| const_cast\<T\>(expr) | Removes const, volatile, and __unaligned attributes from a type. | Compile-time | Value of type T |
+| reinterpret_cast\<T\>(expr) | Converts between types by reinterpreting the underlying bit pattern. | Compile-time | Value of type T |
+
+* [static_cast](https://en.cppreference.com/w/cpp/language/static_cast)
+* [reinterpret_cast](https://en.cppreference.com/w/cpp/language/reinterpret_cast)
+* [dynamic_cast](https://en.cppreference.com/w/cpp/language/dynamic_cast)
+* [const_cast](https://en.cppreference.com/w/cpp/language/const_cast)
     
 ## Templates
 Templates are a powerful feature that allows the creation of generic classes and functions that can workwith different data types. They can be used to create a single implementation of a class or function thatcan be used with any data type, without having to create separate implementations for each data type.
@@ -750,6 +665,7 @@ private:
     there is no difference between using **`typename`** or **`class`** as a template parameter declarationkeyword, in fact, the **`typename`** keyword was added to C++ specifically to make template programmingmore readable and expressive. When used as a template parameter declaration, **`typename`** indicatesthat the dependent name that follows refers to a type. On the other hand, when **`class`** is used, itindicates that the dependent name could refer to a class type, but it could also refer to other thingssuch as a function or a variable.
 
 * [More about Templates](https://cplusplus.com/doc/oldtutorial/templates/)
+
 ## Iterators 
 An iterator is an object that can iterate over elements in a C++ Standard Library container and provideaccess to individual elements. The C++ Standard Library containers all provide iterators so that algorithmscan access their elements in a standard way without having to be concerned with the type of container theelements are stored in.
 
