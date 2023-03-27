@@ -74,11 +74,11 @@ The structure, or building blocks, of object-oriented programming, include the f
     
 - **Methods**
     
-    Methods are functions (or procedures) that are defined inside a class that describe the behaviors of an object. Each method contained in class definitions starts with a reference to an instance object. Additionally, the subroutines contained in an object are called instance methods. Programmers use methods for reusability or keeping functionality encapsulated inside one object at a time.
+    Methods are functions that are defined inside a class that describe the behaviors of an object. Each method contained in class definitions starts with a reference to an instance object. Additionally, the subroutines contained in an object are called instance methods. Methods are usedfor reusability or keeping functionality encapsulated inside one object at a time.
     
 - **Attributes**
     
-    Attributes are defined in the class template and represent the state of an object. Objects will have data stored in the attributes field. Class attributes belong to the class itself.
+    Attributes are the data members or variables that hold the state or data of an object. They define the current state of an object and can be accessed or modified through methods or functions of the object.
     
 
 ## The Four Pillars of OOP:
@@ -113,7 +113,7 @@ The structure, or building blocks, of object-oriented programming, include the f
     
     > means "multiple forms". In OOP these multiple forms refer to multiple forms of the same method, where the exact same method name can be used in different classes, or the same method name can be used in the same class with slightly different parameters.
     >
-    Remember those lions, penguins, and salmons? And remember that they all have a methed walk, this method will take a deffirent form for each animal.
+    Remember those lions, penguins, and salmons? And remember that they all have a methed move, each one of them moves with defferent way, so this method will take a deffirent form for each oone of them.
 
 ## Constructors and Destructor:
 
