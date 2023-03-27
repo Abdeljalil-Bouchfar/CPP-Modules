@@ -22,13 +22,14 @@ In this repository, I'll be sharing my notes on the CPP-Modules, including expla
 * [Exceptions](https://github.com/Abdeljalil-Bouchfar/CPP-Modules#exceptions)
 * [Casting](https://github.com/Abdeljalil-Bouchfar/CPP-Modules#casting)
 * [Templates](https://github.com/Abdeljalil-Bouchfar/CPP-Modules#templates)
-* [Iterators](https://github.com/Abdeljalil-Bouchfar/CPP-Modules#iterators)
+* [STL (Containers, Iterators, Algorithms)](https://github.com/Abdeljalil-Bouchfar/CPP-Modules#iterators)
+* 🔗 [Merge Insertion Sort (a.k.a Ford-Johnson Algorithm)](https://github.com/PunkChameleon/ford-johnson-merge-insertion-sort)
 
 ## OOP Definition:
 
-***Object-Oriented Programming (OOP)*** is the term used to describe a programming approach based on ***objects*** and ***classes***. The object-oriented paradigm allows us to organize software as a collection of objects that consist of both data and behavior. This is in contrast to conventional functional programming practice that only loosely connects data and behavior.
-
-Since the 1980s the word 'object' has appeared in relation to programming languages, with almost all languages developed since 1990 having object-oriented features. Some languages have even had object-oriented features retro-fitted. It is widely accepted that object-oriented programming is the most important and powerful way of creating software.
+Object-oriented programming (OOP) is a programming paradigm that uses **objects - instances of classes -** to represent and manipulate data, and the operations that can be performed on that data. The object-oriented approach emphasizes the organization of code into modular, reusable components, making it easier to understand, maintain, and extend.
+The concept of objects first appeared in programming languages in the 1980s, and since then, almost all modern programming languages have incorporated object-oriented features. Some older programming languages have even had object-oriented features added retroactively to make them more powerful.
+OOP is widely accepted as the most important and powerful way of creating software, especially for large and complex projects. The modular nature of OOP allows developers to build complex systems by breaking them down into smaller, more manageable pieces, and the use of objects makes it easier to reuse code across different parts of a project. Additionally, OOP allows for greater flexibility and scalability, making it easier to modify and maintain code as projects evolve over time.
 
 ## The structure of OOP:
 
@@ -589,9 +590,30 @@ private:
 
 🔗  [More about Templates](https://cplusplus.com/doc/oldtutorial/templates/)
 
-## Iterators 
-An iterator is an object that can iterate over elements in a C++ Standard Library container and provideaccess to individual elements. The C++ Standard Library containers all provide iterators so that algorithmscan access their elements in a standard way without having to be concerned with the type of container theelements are stored in.
+## STL (Containers, Iterators, Algorithms)
+STL stands for Standard Template Library. It is a collection of powerful, reusable, and efficient algorithms and data structures implemented and available as part of the C++ standard library.
 
-You can use iterators in a number of different ways, such as iterating over the elements of a container to perform some operation on them or using algorithms like std::find or std::sort to manipulate the contents of a container. Overall, iterators are a powerful and flexible tool in C++ that allows you to work withcontainers in a generic and efficient way.
+The three main components of the STL in C++
 
-🔗  [More about iterators](https://learn.microsoft.com/en-us/cpp/standard-library/iterators?view=msvc-170)
+1. Containers:
+STL containers are used to store a collection of elements. There are classes that implement data structures to store and manage collections of objects. They provide methods for inserting, removing, and accessing elements, and they automatically manage memory allocation and deallocation. STL containers are generic, meaning they can store objects of any type, including built-in types and user-defined types.
+    
+    Here is a brief description of each container in C++98:
+    
+    - std::vector: A dynamic array that can resize itself as needed.
+    - std::list: A doubly linked list that allows constant time insertions and deletions anywhere in the list.
+    - std::deque: A double-ended queue that allows constant time insertions and deletions at both the beginning and end of the queue.
+    - std::queue: A container adapter that provides a FIFO (first-in first-out) queue data structure.
+    - std::priority_queue: A container adapter that provides a priority queue data structure, where elements are dequeued in order of their priority.
+    - std::stack: A container adapter that provides a LIFO (last-in-first-out) stack data structure.
+    - std::set: A container that stores a set of unique elements in sorted order.
+    - std::multiset: A container that stores a set of elements in sorted order, allowing duplicates.
+    - std::map: A container that stores a set of key-value pairs in sorted order by key.
+    - std::multimap: A container that stores a set of key-value pairs in sorted order by key, allowing duplicates.
+2. Iterators:
+STL iterators provide a way to traverse the elements of a container. They act as pointers to the elements in the container and can be used to access and modify the data. There are several types of iterators available in the STL, such as input iterators, output iterators, forward iterators, bidirectional iterators, and random access iterators. Each type of iterator provides a different level of functionality and performance, depending on the requirements of the algorithm being used.
+3. Algorithms:
+STL algorithms are used to perform operations on the data stored in containers. There are many types of algorithms available in the STL, such as sorting, searching, counting, and more. These algorithms can be applied to any container, regardless of its type, as long as the appropriate iterator is used.
+
+The combination of containers, algorithms, and iterators provides a powerful set of tools for working with data in a variety of contexts.
+🔗  [More about STL](https://en.cppreference.com/w/cpp/container)
