@@ -22,13 +22,15 @@ In this repository, I'll be sharing my notes on the CPP-Modules, including expla
 * [Exceptions](https://github.com/Abdeljalil-Bouchfar/CPP-Modules#exceptions)
 * [Casting](https://github.com/Abdeljalil-Bouchfar/CPP-Modules#casting)
 * [Templates](https://github.com/Abdeljalil-Bouchfar/CPP-Modules#templates)
-* [STL (Containers, Iterators, Algorithms)](https://github.com/Abdeljalil-Bouchfar/CPP-Modules#iterators)
+* [STL (Containers, Iterators, Algorithms)](https://github.com/Abdeljalil-Bouchfar/CPP-Modules/blob/master/README.md#stl-containers-iterators-algorithms)
 * 🔗 [Merge Insertion Sort (a.k.a Ford-Johnson Algorithm)](https://github.com/PunkChameleon/ford-johnson-merge-insertion-sort)
 
 ## OOP Definition:
 
 Object-oriented programming (OOP) is a programming paradigm that uses **objects - instances of classes -** to represent and manipulate data, and the operations that can be performed on that data. The object-oriented approach emphasizes the organization of code into modular, reusable components, making it easier to understand, maintain, and extend.
+
 The concept of objects first appeared in programming languages in the 1980s, and since then, almost all modern programming languages have incorporated object-oriented features. Some older programming languages have even had object-oriented features added retroactively to make them more powerful.
+
 OOP is widely accepted as the most important and powerful way of creating software, especially for large and complex projects. The modular nature of OOP allows developers to build complex systems by breaking them down into smaller, more manageable pieces, and the use of objects makes it easier to reuse code across different parts of a project. Additionally, OOP allows for greater flexibility and scalability, making it easier to modify and maintain code as projects evolve over time.
 
 ## The structure of OOP:
