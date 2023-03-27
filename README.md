@@ -6,16 +6,13 @@ In this repository, I'll be sharing my notes on the CPP-Modules, including expla
 * [The structure of OOP](https://github.com/Abdeljalil-Bouchfar/CPP-Modules#the-structure-of-oop)
 * [The Four Pillars of OOP](https://github.com/Abdeljalil-Bouchfar/CPP-Modules#the-four-pillars-of-oop)
 * [Constructors and Destructor](https://github.com/Abdeljalil-Bouchfar/CPP-Modules#constructors-and-destructor)
-* [Namespaces](https://github.com/Abdeljalil-Bouchfar/CPP-Modules#namespaces)
-* [Member functions](https://github.com/Abdeljalil-Bouchfar/CPP-Modules#member-functions)
-* [The this pointer](https://github.com/Abdeljalil-Bouchfar/CPP-Modules#the-this-pointer)
 * [References](https://github.com/Abdeljalil-Bouchfar/CPP-Modules#references)
 * [Streams](https://github.com/Abdeljalil-Bouchfar/CPP-Modules#streams)
 * [Pointers to member functions](https://github.com/Abdeljalil-Bouchfar/CPP-Modules#pointers-to-member-functions)
 * [Operator overloading](https://github.com/Abdeljalil-Bouchfar/CPP-Modules#operator-overloading)
 * [Fixed-point numbers](https://github.com/Abdeljalil-Bouchfar/CPP-Modules#fixed-point-numbers)
-* [Access specifiers](https://github.com/Abdeljalil-Bouchfar/CPP-Modules#access-specifiers)
 * [Inheritance](https://github.com/Abdeljalil-Bouchfar/CPP-Modules#inheritance)
+* [Access specifiers](https://github.com/Abdeljalil-Bouchfar/CPP-Modules#access-specifiers)
 * [Virtual Keyword](https://github.com/Abdeljalil-Bouchfar/CPP-Modules#virtual-keyword)
 * [Abstract class](https://github.com/Abdeljalil-Bouchfar/CPP-Modules#abstract-class)
 * [Deep & Shallow copies](https://github.com/Abdeljalil-Bouchfar/CPP-Modules#deep--shallow-copies)
@@ -139,59 +136,43 @@ class Car {
 
 🔗  [More about destructors](https://learn.microsoft.com/en-us/cpp/cpp/destructors-cpp?view=msvc-170)
     
-## Namespaces
-    
-A namespace is a declarative region that provides a scope to the identifiers inside it(**names of** types, functions, variables…), it’s used to organize code into logical groups and prevent name collisions that can occur especially when your code base includes multiple libraries.
-
-🔗  [More about Namespaces](https://learn.microsoft.com/en-us/cpp/cpp/namespaces-cpp?view=msvc-170)
-
-## Member functions
-    
-Member functions are operators and functions that have theirdefinition or prototype that are declared as members of a class.Member functions do not include operators and functions declaredwith the friend specifier. These are called *friends* of a class.
-    
-## The this pointer
-    
-The **`this`** pointer **(the self keyword)** is a pointeraccessible only within the nonstatic member functions of a **`class`**, **`struct`**, or **`union`**  type. It points tothe object for which the member function is called.
-
-🔗  [More about The this pointer](https://learn.microsoft.com/en-us/cpp/cpp/this-pointer?view=msvc-170)
-    
 ## References
     
-A reference, like a pointer, stores the address of an object thatis located elsewhere in memory. Unlike a pointer, a referenceafter it is initialized cannot be made to refer to a differentobject or set to null.
+A reference, like a pointer, stores the address of an object that is located elsewhere in memory. Unlike a pointer, a reference after it is initialized cannot be made to refer to a different object or set to null.
 
-In C++, references are typically implemented as pointersinternally. When a reference is defined, the compiler sets up amemory location for the reference variable. This memory locationcontains the memory address of the original variable. This memoryaddress is a pointer to the original variable.
+In C++, references are typically implemented as pointers internally. When a reference is defined, the compiler sets up amemory location for the reference variable. This memory location contains the memory address of the original variable. This memory address is a pointer to the original variable.
 
-When the reference is used in the code, the compiler follows thememory address stored in the reference variable to access thevalue stored in the original variable. This process is transparentto the programmer and happens behind the scenes.
+When the reference is used in the code, the compiler follows the memory address stored in the reference variable to access the value stored in the original variable. This process is transparent to the programmer and happens behind the scenes.
 
-To understand this more clearly, let's consider the followingexample:
+To understand this more clearly, let's consider the following example:
 
 ```cpp
 int i = 21;
 int& r = i;
 ```
 
-Here, an integer variable **`i`** is defined with an initial valueof 0. A reference variable **`r`** is defined and initialized to**`i`**. In this case, the memory layout would look something likethis:
+Here, an integer variable **`i`** is defined with an initial value of 0. A reference variable **`r`** is defined and initialized to**`i`**. In this case, the memory layout would look something likethis:
 
 | Variable | Value | Memory Address |
 | --- | --- | --- |
 | i | 0 | 0x00001234 |
 | r | 0x00001234 | 0x00001238 |
 
-The memory address of **`i`** is 0x00001234 and contains the value0. The memory address of **`r`** is 0x00001238, which contains thememory address of **`i`** (0x00001234).
+The memory address of **`i`** is 0x00001234 and contains the value 0. The memory address of **`r`** is 0x00001238, which contains the memory address of **`i`** (0x00001234).
 
-When the reference variable **`r`** is used in the code, thecompiler follows the memory address stored in **`r`** (0x00001234)to access the value stored in the original variable **`i`** (0).The value stored in the reference variable **`r`** is the memoryaddress of **`i`** variable.
+When the reference variable **`r`** is used in the code, the compiler follows the memory address stored in **`r`** (0x00001234)to access the value stored in the original variable **`i`** (0).The value stored in the reference variable **`r`** is the memory address of **`i`** variable.
 
-It's worth noting that the size of a reference variable is thesize of a pointer on the platform, it takes the same amount ofmemory as a pointer.
+It's worth noting that the size of a reference variable is the size of a pointer on the platform, it takes the same amount of memory as a pointer.
 
-In conclusion, references in C++ are implemented as pointersinternally, and the compiler uses the memory address stored in thereference variable to access the value of the original variable.This allows the programmer to use the reference variable as if itwere the original variable, while still maintaining the benefitsof working with pointers, such as the ability to manipulate largedata structures more efficiently.
+In conclusion, references in C++ are implemented as pointers internally, and the compiler uses the memory address stored in the reference variable to access the value of the original variable.This allows the programmer to use the reference variable as if it were the original variable, while still maintaining the benefits of working with pointers, such as the ability to manipulate large data structures more efficiently.
 
 🔗  [More about References](https://learn.microsoft.com/en-us/cpp/cpp/references-cpp?view=msvc-170)
     
 ## Streams
     
-A stream is an abstraction that represents a device on which inputand ouput operations are performed.
+A stream is an abstraction that represents a device on which input and ouput operations are performed.
 
-The iostream library is an object-oriented library that providesinput and output functionality using stream objects that allow youto read from or write to various sources, such as files, strings,or the console. They are part of the C++ Standard Template Library(STL) and provide a convenient way to perform input/output (I/O)operations.
+The iostream library is an object-oriented library that provides input and output functionality using stream objects that allow youto read from or write to various sources, such as files, strings,or the console. They are part of the C++ Standard Template Library(STL) and provide a convenient way to perform input/output (I/O)operations.
 
 There are several types of streams available in C++, including:
 
@@ -201,7 +182,7 @@ There are several types of streams available in C++, including:
 - **`istream`** (input stream) for reading from any input source
 - **`ostream`** (output stream) for writing to any output source
 
-The most commonly used streams are **`cin`** and **`cout`**, whichare the standard input and standard output streams, respectively.They are both derived from the **`istream`** and **`ostream`**classes and are used for reading from and writing to the console.
+The most commonly used streams are **`cin`** and **`cout`**, which are the standard input and standard output streams, respectively.They are both derived from the **`istream`** and **`ostream`**classes and are used for reading from and writing to the console.
 
 Here is an example of using the **`cout`** stream to output amessage to the console:
 
@@ -230,7 +211,7 @@ int main() {
 
 ## Pointers to member functions
     
- In C++, a pointer to a member function is a special type ofpointer that can be used to call a member function on an object ofa specific class. A pointer to a member function is declared byspecifying the class name, followed by the scope resolutionoperator (::), followed by the keyword "function", followed by thefunction's return type, followed by the function's name, andfinally a pointer operator (*).
+ In C++, a pointer to a member function is a special type of pointer that can be used to call a member function on an object of a specific class. A pointer to a member function is declared by specifying the class name, followed by the scope resolutionoperator (::), followed by the keyword "function", followed by thefunction's return type, followed by the function's name, and finally a pointer operator (*).
  
  Here's an example of declaring a pointer to a member function:
  
@@ -245,31 +226,31 @@ int main() {
  void (MyClass::*ptr)() = &MyClass::print;
  ```
  
- In this example, **`ptr`** is a pointer to a member function ofthe class **`MyClass`** that takes no arguments and returns novalue (void). The address of the **`print`** member function isassigned to the pointer using the address-of operator (&) and theclass scope operator (::).
+ In this example, **`ptr`** is a pointer to a member function of the class **`MyClass`** that takes no arguments and returns no value (void). The address of the **`print`** member function is assigned to the pointer using the address-of operator (&) and theclass scope operator (::).
  
- To call a member function using a pointer to a member function,you must first create an object of the class, and then use theobject and the pointer to call the function. Here is an example:
+ To call a member function using a pointer to a member function,you must first create an object of the class, and then use the object and the pointer to call the function. Here is an example:
  
  ```cpp
  MyClass obj;
  (obj.*ptr)(); // equivalent to obj.print();
  ```
  
- Alternatively you can use the **`->*`** operator to call a memberfunction using a pointer to a member function.
+ Alternatively you can use the **`->*`** operator to call a member function using a pointer to a member function.
  
  ```cpp
  MyClass* obj_ptr = new MyClass();
  (obj_ptr->*ptr)(); // equivalent to obj_ptr->print();
  ```
  
- It's worth noting that, pointers to member functions are differentfrom pointers to non-member functions and also different frompointers to data members. Pointers to member functions require aninstance of the class to call the function on and also require theuse of the **`->*`** or **`.*`** operator when calling thefunction.
+ It's worth noting that, pointers to member functions are different from pointers to non-member functions and also different from pointers to data members. Pointers to member functions require an instance of the class to call the function on and also require the use of the **`->*`** or **`.*`** operator when calling the function.
  
 🔗  [More about Pointers to member functions](https://www.ibm.com/docs/en/zos/2.4.0?topic=only-pointers-members-c)
 
 ## Operator overloading
     
-Operator overloading is a feature that allows you tospecify how objects of a class should behave when an operator isapplied to them.
+Operator overloading is a feature that allows you to specify how objects of a class should behave when an operator is applied to them.
 
-For example, you can overload the addition operator **`+`** foryour custom class to allow objects of your class to be addedtogether. When you define the addition operator for your class,you specify what the result of the addition should be.
+For example, you can overload the addition operator **`+`** for your custom class to allow objects of your class to be added together. When you define the addition operator for your class,you specify what the result of the addition should be.
 
 To overload an operator, you define a special member function ofthe class called an operator function. The operator function hasthe same name as the operator being overloaded and is preceded bythe keyword **`operator`**.
 
@@ -291,9 +272,9 @@ MyClass MyClass::operator+(const MyClass& other) const {
 }
 ```
 
-In this example, the **`operator+`** function is defined to addtwo **`MyClass`** objects together. The function takes a referenceto another **`MyClass`** object and returns a new **`MyClass`**object as a result of the addition.
+In this example, the **`operator+`** function is defined to add two **`MyClass`** objects together. The function takes a referenceto another **`MyClass`** object and returns a new **`MyClass`**object as a result of the addition.
 
-You can now use the **`+`** operator with objects of the**`MyClass`** class, and the overloaded **`operator+`** functionwill be called:
+You can now use the **`+`** operator with objects of the**`MyClass`** class, and the overloaded **`operator+`** function will be called:
 
 ```cpp
 MyClass a, b, c;
@@ -308,61 +289,47 @@ In C++ numbers can be represented in two ways **Integers** or**Floating-point nu
 
 - Integers
     
-    Integers ****are whole numbers without a fractional component.They can be positive or negative. Common integer types in C++include **`int`**, **`short`**, and **`long`,** integers aretypically stored in binary format, meaning they can onlyrepresent numbers expressed in binary (base 2) notation.
+    Integers are whole numbers without a fractional component.They can be positive or negative. Common integer types in C++include **`int`**, **`short`**, and **`long`,** integers aretypically stored in binary format, meaning they can onlyrepresent numbers expressed in binary (base 2) notation.
     
-    Integer numbers are represented in the computer memory, as **asequence of bits: 8-bits, 16-bits, 24-bits, 32-bits, 64-bits,and others, but always a multiple of 8 (one byte)**.
+    Integer numbers are represented in the computer memory, as a **sequence of bits: 8-bits, 16-bits, 24-bits, 32-bits, 64-bits,and others, but always a multiple of 8 (one byte)**.
     
 - Floating-point numbers
     
-    Floating-point numbers**,** also known as **`float`** or**`double`** are numbers that have a fractional component.They represent decimal numbers and are implemented using afixed number of bits to represent the decimal point andsignificant digits. floating-point numbers have limitedprecision and may not be able to represent some decimalnumbers exactly.
+    Floating-point numbers `,` also known as `float` or `double` are numbers that have a fractional component.They represent decimal numbers and are implemented using afixed number of bits to represent the decimal point and significant digits. floating-point numbers have limited precision and may not be able to represent some decimal numbers exactly.
     
-    The exact representation of numbers in memory can varydepending on the underlying hardware and the implementation ofthe compiler. However Floating-point numbers, such as**`float`** and **`double`**, are stored using the IEEE 754standard (look for [ieee754.h](https://sites.uclouvain.beSystInfo/usr/include/ieee754.h.html))
+    The exact representation of numbers in memory can vary depending on the underlying hardware and the implementation ofthe compiler. However Floating-point numbers, such as `float` and `double`, are stored using the IEEE 754 standard (look for [ieee754.h](https://sites.uclouvain.beSystInfo/usr/include/ieee754.h.html))
     
     - The IEEE 754 standard
         
-        IEEE 754 is a widely used standard for representingfloating-point numbers in computer systems. The standardwas developed by the Institute of Electrical andElectronics Engineers (IEEE) in 1985 and has since becomean industry standard for floating-point arithmetic in mostcomputer systems.
+        IEEE 754 is a widely used standard for representing floating-point numbers in computer systems. The standardwas developed by the Institute of Electrical and Electronics Engineers (IEEE) in 1985 and has since becomean industry standard for floating-point arithmetic in mostcomputer systems.
         
-        The standard defines several different formats forfloating-point numbers, including single-precision (32bits), double-precision (64 bits), and extended-precision(80 bits) formats. The most commonly used format is thesingle-precision format, which provides a trade-offbetween range and precision.
+        The standard defines several different formats for floating-point numbers, including single-precision (32bits), double-precision (64 bits), and extended-precision(80 bits) formats. The most commonly used format is thesingle-precision format, which provides a trade-offbetween range and precision.
         
         IEEE 754 formats:
         
         ![Untitled](https://github.com/Abdeljalil-Bouchfar/CPP-Modules/blob/master/assets/IEEE%20754%20formats.png)
         
-        The first bit is the **`sign bit`**, with 0 representing apositive number and 1 representing a negative number. Thenext **N** bits represent the **`exponent`**, and thefinal **N** bits represent the `**significand**` (ormantissa).
+        The first bit is the `sign bit`, with 0 representing apositive number and 1 representing a negative number. Thenext **N** bits represent the `exponent`, and thefinal **N** bits represent the `significand` (or mantissa).
         
         🔗  [Decimal to IEEE 754 Floating Point Representation](https://www.youtube.com/watch?v=8afbTaA-gOQ)
         
         🔗  [IEEE 754 Floating Point Representation to its DecimalEquivalent](https://www.youtube.com/watch?v=LXF-wcoeT0o)
         
 
-Fixed-point numbers are commonly used in computer systems wherefloating-point operations are not supported or are too slow(whenperformance is more important than precision).
+Fixed-point numbers are commonly used in computer systems where floating-point operations are not supported or are too slow(when performance is more important than precision).
 
 - Fixed-point numbers
     
-    In fixed-point representation, a number is stored as aninteger with an implicit decimal point. The position of thedecimal point is fixed and known in advance and does notchange during arithmetic operations. For example, if we use afixed-point representation with 4 bits for the integer partand 4 bits for the fractional part, the number 3.5 would berepresented as 0011.1000.
+    In fixed-point representation, a number is stored as aninteger with an implicit decimal point. The position of the decimal point is fixed and known in advance and does not change during arithmetic operations. For example, if we use a fixed-point representation with 4 bits for the integer partand 4 bits for the fractional part, the number 3.5 would berepresented as 0011.1000.
     
-    Fixed-point representation has some advantages overfloating-point representation, such as simpler arithmeticoperations and lower memory usage. However, it has somelimitations as well, such as a smaller range and lowerprecision compared to floating-point numbers.
+    Fixed-point representation has some advantages over floating-point representation, such as simpler arithmetic operations and lower memory usage. However, it has some limitations as well, such as a smaller range and lowerprecision compared to floating-point numbers.
     
     🔗  [Introduction to Fixed Point Number Representation](https:/inst.eecs.berkeley.edu//~cs61c/sp06/handout/fixedpt.html)
     
     🔗  [Fixed Point Arithmetic in C Programming](https:/stackoverflow.com/questions/10067510fixed-point-arithmetic-in-c-programming)
-    
-## Access specifiers
-    
-Access specifiers are used for determining or setting the boundary for the availability of classmembers(data members and member functions)  beyond that class. For example,  the class members are groupedintosections, private protected and public. These keywords are called access specifiers which definetheaccessibility or visibility level of class members.
-
-By default the class members are private. So if the visibility labels are missing then by default, alltheclass members are private.
-
-In inheritance, it is important to know when the objects of the derived class can use a member function inthebase class. This is called accessibility and the access specifiers are used to determine this.
-
-| Access Specifier | Description |
-| --- | --- |
-| public | Public members are accessible from anywhere in the program and can be accessed by any object oftheclass, as well as by any function outside of the class. This is often used for member functions thatneed to becalled from outside the class, as well as for data members that are intended to be accesseddirectly. |
-| protected | Protected members are accessible from within the class itself, as well as by any derivedclassthat inherits from the class. This is often used for member functions and data members that need tobe accessedby derived classes, but not by other objects outside of the class hierarchy. |
-| private | Private members are only accessible from within the class itself, and cannot be accessed byanyobjects or functions outside of the class. This is often used for data members that should not bemodifieddirectly, as well as for member functions that are only used internally by the class itself. |
 
 ## Inheritance
-Inheritance is a way to create a new class (known as a derived class) from an existing class (knownas   a base class). The derived class inherits all `non-private` data members and all `non-private` memberfunctions of the base class and can also add its own data members and member functions. 
+Inheritance is a way to create a new class (known as a derived class) from an existing class (known as   a base class). The derived class inherits all `non-private` data members and all `non-private` member functions of the base class and can also add its own data members and member functions. 
 
 ```cpp
 #include <iostream>
@@ -399,12 +366,26 @@ int main() {
 }
 ```
 
-In this example, the **`Shape`** class is the base class and the **`Rectangle`** class is the derivedclass.The **`Rectangle`** class inherits the **`setWidth`** and **`setHeight`** member functions from the**`Shape`** class and also adds its own member function **`getArea`**. The **`getArea`** function usesthe**`width`** and **`height`** data members which are inherited from the **`Shape`** class.
-    
-## Virtual Keyword
-The `virtual` keyword is used to declare a virtual function. A virtual function is a function that can beoverridden by a derived class, allowing the derived class to provide its own implementation of the function.
+In this example, the `Shape` class is the base class and the `Rectangle` class is the derivedclass.The `Rectangle` class inherits the `setWidth` and `setHeight` member functions from the `Shape` class and also adds its own member function `getArea`. The `getArea` function uses the `width` and  `height` data members which are inherited from the `Shape` class.
 
-When a derived class overrides a virtual function, it provides its own implementation of the function thatis used instead of the implementation provided by the base class. This allows classes to provide a commoninterface, while still allowing each class to provide its own unique implementation of the interface.
+## Access specifiers
+    
+Access specifiers are used for determining or setting the boundary for the availability of class members(data members and member functions)  beyond that class. For example,  the class members are grouped into sections, private protected and public. These keywords are called access specifiers which define the accessibility or visibility level of class members.
+
+By default the class members are private. So if the visibility labels are missing then by default, all the class members are private.
+
+In inheritance, it is important to know when the objects of the derived class can use a member function in the base class. This is called accessibility and the access specifiers are used to determine this.
+
+| Access Specifier | Description |
+| --- | --- |
+| public | Public members are accessible from anywhere in the program and can be accessed by any object of the class, as well as by any function outside of the class. This is often used for member functions thatneed to becalled from outside the class, as well as for data members that are intended to be accessed directly. |
+| protected | Protected members are accessible from within the class itself, as well as by any derived class that inherits from the class. This is often used for member functions and data members that need to be accessed by derived classes, but not by other objects outside of the class hierarchy. |
+| private | Private members are only accessible from within the class itself, and cannot be accessed by any objects or functions outside of the class. This is often used for data members that should not be modified directly, as well as for member functions that are only used internally by the class itself. |
+
+## Virtual Keyword
+The `virtual` keyword is used to declare a virtual function. A virtual function is a function that can be overridden by a derived class, allowing the derived class to provide its own implementation of the function.
+
+When a derived class overrides a virtual function, it provides its own implementation of the function thatis used instead of the implementation provided by the base class. This allows classes to provide a common interface, while still allowing each class to provide its own unique implementation of the interface.
 
 Here's an example of using virtual functions:
 
@@ -447,14 +428,12 @@ int main() {
 }
 ```
 
-In this example, the `Animal` class provides a virtual function `speak()`, which is overridden by the `Dog`and `Cat` classes. When `speak()` is called on an object of type `Animal`, the implementation provided bythe `Animal` class is used. However, when `speak()` is called on an object of type `Dog` or `Cat`, theimplementation provided by the derived class is used instead.
-
-It's worth noting that virtual functions can also be declared as pure virtual functions by specifying `= 0`after the function declaration.
+In this example, the `Animal` class provides a virtual function `speak()`, which is overridden by the `Dog`and `Cat` classes. When `speak()` is called on an object of type `Animal`, the implementation provided bythe `Animal` class is used. However, when `speak()` is called on an object of type `Dog` or `Cat`, the implementation provided by the derived class is used instead.
 
 ## Abstract class
-An abstract class is a class that cannot be instantiated on its own and is designed to be used as a baseclass. It is an incomplete class that contains at least one pure virtual function. A pure virtual functionis a virtual function that has no implementation in the base class and is intended to be overridden byderived classes.
+An abstract class is a class that cannot be instantiated on its own and is designed to be used as a base class. It is an incomplete class that contains at least one pure virtual function. A pure virtual functionis a virtual function that has no implementation in the base class and is intended to be overridden by derived classes.
 
-The purpose of an abstract class is to provide an interface for derived classes to follow. It defines a setof functions that derived classes must implement in order to be considered a concrete implementation of theabstract class. By providing an interface for derived classes, an abstract class can be used as a templatefor a family of related classes, providing a common base for all of them.
+The purpose of an abstract class is to provide an interface for derived classes to follow. It defines a set of functions that derived classes must implement in order to be considered a concrete implementation of the abstract class. By providing an interface for derived classes, an abstract class can be used as a template for a family of related classes, providing a common base for all of them.
 
 An example of an abstract class:
 
@@ -466,27 +445,27 @@ public:
 };
 ```
 
-In this example, **`Shape`** is an abstract class that defines two pure virtual functions, **`area()`** and**`perimeter()`**. Any derived class that inherits from **`Shape`** must implement these two functions inorder to be a concrete implementation of **`Shape`**.
+In this example, `Shape` is an abstract class that defines two pure virtual functions, `area()` and `perimeter()`. Any derived class that inherits from `Shape` must implement these two functions in order to be a concrete implementation of `Shape`.
 
-A pure virtual function has no implementation in the base class and must be overridden by any derived classthat wants to be instantiated.
+A pure virtual function has no implementation in the base class and must be overridden by any derived class that wants to be instantiated.
     
 ## Deep & Shallow copies
 when an object is copied, there are two ways to do it: shallow copy and deep copy.
 
-A **`shallow copy`** copies the values of the member variables from the original object to the new object.If a member variable is a pointer, then the copy will have a new pointer that points to the same memorylocation as the original pointer. This means that changes to the data pointed to by the original and copiedpointers will affect both objects.
+A **`shallow copy`** copies the values of the member variables from the original object to the new object.If a member variable is a pointer, then the copy will have a new pointer that points to the same memory location as the original pointer. This means that changes to the data pointed to by the original and copied pointers will affect both objects.
 
 A **`deep copy`**, on the other hand, creates a new copy of the pointed-to data. This means that changes tothe data pointed to by one object's pointer will not affect the other object.
 
-In general, deep copies are safer than shallow copies, because they do not share any data between objects.However, deep copies can be more expensive to create than shallow copies, because they require duplicatingall of the pointed-to data.
+In general, deep copies are safer than shallow copies, because they do not share any data between objects. However, deep copies can be more expensive to create than shallow copies, because they require duplicating all of the pointed-to data.
     
 ## Exceptions 
-Exceptions are a mechanism for handling errors and abnormal situations that occur during programexecution. When an exception is thrown, it is an indication that something has gone wrong and the normalflow of the program cannot continue.
+Exceptions are a mechanism for handling errors and abnormal situations that occur during program execution. When an exception is thrown, it is an indication that something has gone wrong and the normal flow of the program cannot continue.
 
 Exceptions are represented by objects that are thrown by a function using the **`throw`** keyword.The thrown object can be of any type, but it is typically derived from the **`std::exception`** class.
 
-The process of handling exceptions involves three main components: the code that throws the exception, thecode that handles the exception, and the system that facilitates the transfer of control between them.
+The process of handling exceptions involves three main components: the code that throws the exception, the code that handles the exception, and the system that facilitates the transfer of control between them.
 
-The basic syntax for handling exceptions in C++ is the **`try-catch`** block. The code that might throw anexception is enclosed in the **`try`** block, and the code that handles the exception is enclosed in one ormore **`catch`** blocks. If an exception is thrown in the **`try`** block, the program jumps immediately tothe appropriate **`catch`** block, skipping any remaining code in the **`try`** block.
+The basic syntax for handling exceptions in C++ is the **`try-catch`** block. The code that might throw an exception is enclosed in the **`try`** block, and the code that handles the exception is enclosed in one or more **`catch`** blocks. If an exception is thrown in the **`try`** block, the program jumps immediately to the appropriate **`catch`** block, skipping any remaining code in the **`try`** block.
 
 Here is an example of using exceptions:
 
@@ -517,11 +496,11 @@ int main() {
 }
 ```
 
-In this example, the **`processString`** function takes a **`std::string`** parameter and checks whetherthe length of the string is less than 5 characters. If it is, an exception of type**`std::invalid_argument`** is thrown using the **`throw`** keyword.
+In this example, the **`processString`** function takes a **`std::string`** parameter and checks whether the length of the string is less than 5 characters. If it is, an exception of type**`std::invalid_argument`** is thrown using the **`throw`** keyword.
 
-In the **`main`** function, the **`processString`** function is called inside a **`try`** block. If anexception is thrown, the program jumps to the **`catch`** block, where the exception object is caught andits message is printed to the standard error stream.
+In the **`main`** function, the **`processString`** function is called inside a **`try`** block. If anexception is thrown, the program jumps to the **`catch`** block, where the exception object is caught and its message is printed to the standard error stream.
 
-The **`catch`** block can catch exceptions of different types by using multiple **`catch`** blocks. If no**`catch`** block is able to handle the thrown exception, the program terminates and displays an errormessage.
+The **`catch`** block can catch exceptions of different types by using multiple **`catch`** blocks. If no **`catch`** block is able to handle the thrown exception, the program terminates and displays an errormessage.
 
 ## Casting
 Casting is a conversion process wherein data can be changed from one type to another. C++ has two types ofconversions:
@@ -558,9 +537,9 @@ In C++, there are four types of casting operators.
 🔗  [const_cast](https://en.cppreference.com/w/cpp/language/const_cast)
     
 ## Templates
-Templates are a powerful feature that allows the creation of generic classes and functions that can workwith different data types. They can be used to create a single implementation of a class or function thatcan be used with any data type, without having to create separate implementations for each data type.
+Templates are a powerful feature that allows the creation of generic classes and functions that can work with different data types. They can be used to create a single implementation of a class or function that can be used with any data type, without having to create separate implementations for each data type.
 
-Templates are declared using the **`template`** keyword, followed by the template parameter list enclosedin angle brackets **`<>`**. The template parameter list specifies one or more template parameters, whichcan be types, non-type values, or template parameters themselves.
+Templates are declared using the **`template`** keyword, followed by the template parameter list enclosedin angle brackets **`<>`**. The template parameter list specifies one or more template parameters, which can be types, non-type values, or template parameters themselves.
 
 ```cpp
 template <typename T>
@@ -570,11 +549,11 @@ T minimum(const T& lhs, const T& rhs)
 }
 ```
 
-The above code describes a template for a generic function with a single type parameter *T*, whose returnvalue and call parameters (lhs and rhs) are all of this type. You can name a type parameter anything youlike, but by convention single upper case letters are most commonly used. *T* is a template parameter;the **`typename`** keyword says that this parameter is a placeholder for a type. When the function iscalled, the compiler will replace every instance of `T` with the concrete type argument that is eitherspecified by the user or deduced by the compiler. The process in which the compiler generates a class orfunction from a template is referred to as ***template instantiation**:*
+The above code describes a template for a generic function with a single type parameter *T*, whose returnvalue and call parameters (lhs and rhs) are all of this type. You can name a type parameter anything you like, but by convention single upper case letters are most commonly used. *T* is a template parameter;the **`typename`** keyword says that this parameter is a placeholder for a type. When the function iscalled, the compiler will replace every instance of `T` with the concrete type argument that is either specified by the user or deduced by the compiler. The process in which the compiler generates a class or function from a template is referred to as ***template instantiation**:*
 
 `minimum<int>` is an instantiation of the template `minimum<T>`.
 
-Templates can also be used with classes to create generic classes. Here's an example of a simple templateclass that represents a stack of any data type:
+Templates can also be used with classes to create generic classes. Here's an example of a simple template class that represents a stack of any data type:
 
 ```cpp
 template<class T>
@@ -588,7 +567,7 @@ private:
 ```
     
 - `template <typename T>` vs `template <class T>`   
-    there is no difference between using **`typename`** or **`class`** as a template parameter declarationkeyword, in fact, the **`typename`** keyword was added to C++ specifically to make template programmingmore readable and expressive. When used as a template parameter declaration, **`typename`** indicatesthat the dependent name that follows refers to a type. On the other hand, when **`class`** is used, itindicates that the dependent name could refer to a class type, but it could also refer to other thingssuch as a function or a variable.
+    there is no difference between using **`typename`** or **`class`** as a template parameter declaration keyword, in fact, the **`typename`** keyword was added to C++ specifically to make template programming more readable and expressive. When used as a template parameter declaration, **`typename`** indicates that the dependent name that follows refers to a type. On the other hand, when **`class`** is used, itindicates that the dependent name could refer to a class type, but it could also refer to other thing ssuch as a function or a variable.
 
 🔗  [More about Templates](https://cplusplus.com/doc/oldtutorial/templates/)
 
